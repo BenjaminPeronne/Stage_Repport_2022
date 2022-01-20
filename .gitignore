@@ -13,3 +13,6 @@
 /rapport_stage.mtc5
 /rapport_stage.mtc6
 /rapport_stage.synctex.gz
+src/tex/cover_page.aux
+src/tex/intro.aux
+src/.DS_Store
