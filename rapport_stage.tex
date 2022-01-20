@@ -1,0 +1,130 @@
+\documentclass[a4paper, 11pt]{report}
+
+\usepackage[T1]{fontenc} % Times New Roman
+% \usepackage{times} % Times New Roman
+\usepackage{lmodern} % sans serif
+\usepackage[utf8]{inputenc} % UTF-8
+\usepackage[french]{babel} % French 
+
+\usepackage{minitoc} % Table of contents
+\usepackage{geometry} % Page size
+\usepackage{ragged2e} % Ragged right
+\usepackage{fancyhdr} % Header
+\usepackage{graphicx} % Images
+\usepackage[scaled]{helvet} 
+	
+\usepackage{listings} % Code
+
+
+\graphicspath{ {./images/} }
+
+% \UseRawInputEncoding
+
+\justifying
+\setlength{\headheight}{0.5cm}
+\setlength{\headsep}{0.5cm}
+
+\geometry{hmargin=2.5cm,vmargin=2.5cm}
+
+\setcounter{secnumdepth}{3} % Section number depth
+\setcounter{tocdepth}{1} % Table of contents depth
+\setcounter{minitocdepth}{3} % Table of contents depth
+
+\begin{document}
+
+% Intro             ===============================
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+
+        \textbf{\Huge{ISYEB}}
+
+        \vspace{0.5cm}
+
+        \textbf{Rapport de stage de 3ème année de Licence Informatique} 
+
+        \vspace{0.5cm}
+
+        \small{\textit{Sujet : Réalisation d'un dispositif de capture vidéo pour l’acquisition de données dans le cadre d’une manipulation en biologie.}}
+
+        \vspace{1.5cm}
+
+        \textbf{Aymerick LAURETTA-PERONNE} \\
+
+        \vfill
+
+        % Rapport de stage de 3ème année de Licence Informatique \\
+
+        \vspace{0.8cm}
+
+        \includegraphics[]{logo.png}
+        
+        \textbf{Informatique} \\
+        \textbf{Université des Antilles} \\
+        \textbf{Région de la Guadeloupe} \\
+        \vspace{0.5cm}
+        \textbf{\today {}}
+         
+    \end{center}
+\end{titlepage}
+% Intro             ===============================
+
+\dominitoc
+\tableofcontents
+
+
+
+\chapter{Introduction}
+\minitoc       
+
+    \section{Présentation}
+
+\chapter{Environnement}
+\minitoc
+
+    \section{Présentation de l'entreprise}
+    \section{L'équipe projet}
+    
+\chapter{Conception et réalisation de l'application}
+\minitoc 
+
+    \section{Description, résultats attendus et objectifs}
+    \section{Etude du besoin}
+        \subsection{Contexte}
+        \subsection{Analyse du besoin}
+        \subsection{Définition des besoins}
+        
+    \section{Choix des technologies}
+        \subsection{Choix du langage Python}
+        \subsection{Choix l'API PiCamera}
+        \subsection{Choix de la bibliothèque Tkinter}
+
+\chapter{Présentation de la problématique (sujet du stage)}
+\minitoc
+    \section{Projet : Montage du dispositif de capture vidéo}
+      
+        \subsection{Objectifs}
+            \begin{itemize}
+                \item Montage du dispositif de capture vidéo
+                \item Acquisition des données
+                \item Traitement des données
+                \item Visualisation des données
+            \end{itemize}
+    
+
+    \section{Projet : Rélisation du logiciel de capture vidéo}
+        \subsection{Objectifs}
+            \begin{itemize}
+                \item Réalisation du logiciel de capture vidéo
+                \item Acquisition des données
+                \item Traitement des données
+                \item Visualisation des données
+            \end{itemize}
+
+\chapter{Travail réalisé}
+\minitoc      
+
+\chapter{Conclusion}
+\minitoc      
+
+\end{document}

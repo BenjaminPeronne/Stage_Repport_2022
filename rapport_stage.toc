@@ -1,0 +1,23 @@
+\babel@toc {french}{}\relax 
+\contentsline {chapter}{\numberline {1}Introduction}{2}{}%
+\contentsline {section}{\numberline {1.1}Présentation}{2}{}%
+\contentsline {chapter}{\numberline {2}Environnement}{3}{}%
+\contentsline {section}{\numberline {2.1}Présentation de l'entreprise}{3}{}%
+\contentsline {section}{\numberline {2.2}L'équipe projet}{3}{}%
+\contentsline {chapter}{\numberline {3}Conception et réalisation de l'application}{4}{}%
+\contentsline {section}{\numberline {3.1}Description, résultats attendus et objectifs}{4}{}%
+\contentsline {section}{\numberline {3.2}Etude du besoin}{4}{}%
+\contentsline {subsection}{\numberline {3.2.1}Contexte}{4}{}%
+\contentsline {subsection}{\numberline {3.2.2}Analyse du besoin}{4}{}%
+\contentsline {subsection}{\numberline {3.2.3}Définition des besoins}{4}{}%
+\contentsline {section}{\numberline {3.3}Choix des technologies}{4}{}%
+\contentsline {subsection}{\numberline {3.3.1}Choix du langage Python}{4}{}%
+\contentsline {subsection}{\numberline {3.3.2}Choix l'API PiCamera}{4}{}%
+\contentsline {subsection}{\numberline {3.3.3}Choix de la bibliothèque Tkinter}{4}{}%
+\contentsline {chapter}{\numberline {4}Présentation de la problématique (sujet du stage)}{5}{}%
+\contentsline {section}{\numberline {4.1}Projet : Montage du dispositif de capture vidéo}{5}{}%
+\contentsline {subsection}{\numberline {4.1.1}Objectifs}{5}{}%
+\contentsline {section}{\numberline {4.2}Projet : Rélisation du logiciel de capture vidéo}{5}{}%
+\contentsline {subsection}{\numberline {4.2.1}Objectifs}{5}{}%
+\contentsline {chapter}{\numberline {5}Travail réalisé}{6}{}%
+\contentsline {chapter}{\numberline {6}Conclusion}{7}{}%
