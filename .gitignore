@@ -20,3 +20,6 @@ src/.DS_Store
 .rapport_stage 2.fdb_latexmk.icloud
 .rapport_stage 2.fls.icloud
 .rapport_stage 2.toc.icloud
+rapport_stage.toc
+rapport_stage 2.synctex.gz
+.rapport_stage.synctex.gz.icloud
