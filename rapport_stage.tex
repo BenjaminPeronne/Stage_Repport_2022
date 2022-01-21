@@ -1,9 +1,9 @@
-\documentclass[a4paper, 11pt]{report}
+\documentclass[a4paper, 12pt]{report}
 
-\usepackage[T1]{fontenc} % Times New Roman
-\usepackage{lmodern} % sans serif
 \usepackage[utf8]{inputenc} % UTF-8
 \usepackage[french]{babel} % French 
+\usepackage[T1]{fontenc} % Times New Roman
+
 \usepackage{minitoc} % Table of contents
 \usepackage{geometry} % Page size
 \usepackage{ragged2e} % Ragged right
@@ -11,6 +11,7 @@
 \usepackage{graphicx} % Images
 \usepackage[scaled]{helvet} 
 \usepackage{listings} % Code
+
 
 \graphicspath{ {./src/images/} }
 
@@ -35,69 +36,28 @@
 \tableofcontents
 
 
+% Introduction             ===============================
+\include{./src/tex/chapter_1.tex}
+% Introduction             ===============================
 
-\chapter{Introduction}
-\minitoc       
-
-    \section{Présentation}
-
-\chapter{Environnement}
-\minitoc
-
-    \section{Présentation de l'entreprise}
-    \section{L'équipe projet}
+% Environnement             ===============================
+\include{./src/tex/chapter_2.tex}
+% Environnement             ===============================
     
-\chapter{Conception et réalisation de l'application}
-\minitoc 
+% Conception et réalisation de l'application             ===============================
+\include{./src/tex/chapter_3.tex}
+% Conception et réalisation de l'application             ===============================
 
-    \section{Description, résultats attendus et objectifs}
-    \section{Etude du besoin}
-        \subsection{Contexte}
-        \subsection{Analyse du besoin}
-        \subsection{Définition des besoins}
-        
-    \section{Choix des technologies}
-        \subsection{Choix du langage Python}
-        \subsection{Choix l'API PiCamera}
-        \subsection{Choix de la bibliothèque Tkinter}
+% Présentation de la problématique (sujet du stage)          ===============================
+\include{./src/tex/chapter_4.tex}
+% Présentation de la problématique (sujet du stage)          ===============================
 
-\chapter{Présentation de la problématique (sujet du stage)}
-\minitoc
+% Travail réalisé          ===============================
+\include{./src/tex/chapter_5.tex} 
+% Travail réalisé          ===============================
 
-    \section{Description, résultats attendus et objectifs}
-    \section{Etude du besoin}
-        \subsection{Contexte}
-        \subsection{Analyse du besoin}
-        \subsection{Définition des besoins}
-        
-    \section{Choix des technologies}
-        \subsection{Choix du langage Python}
-        \subsection{Choix l'API PiCamera}
-        \subsection{Choix de la bibliothèque Tkinter}
-        \section{Projet : Montage du dispositif de capture vidéo}
-      
-        \subsection{Objectifs}
-            \begin{itemize}
-                \item Montage du dispositif de capture vidéo
-                \item Acquisition des données
-                \item Traitement des données
-                \item Visualisation des données
-            \end{itemize}
-    
-
-    \section{Projet : Rélisation du logiciel de capture vidéo}
-        \subsection{Objectifs}
-            \begin{itemize}
-                \item Réalisation du logiciel de capture vidéo
-                \item Acquisition des données
-                \item Traitement des données
-                \item Visualisation des données
-            \end{itemize}
-
-\chapter{Travail réalisé}
-\minitoc      
-
-\chapter{Conclusion}
-\minitoc      
+% Conclusion          ===============================
+\include{./src/tex/chapter_6.tex}
+% Conclusion          ===============================
 
 \end{document}
