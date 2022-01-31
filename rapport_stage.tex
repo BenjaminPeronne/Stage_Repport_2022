@@ -13,7 +13,11 @@
 \usepackage{graphicx} % Images
 \usepackage[scaled]{helvet} 
 \usepackage{listings} % Code
+\usepackage{amsthm}
+\usepackage{hyperref}
 
+
+\newtheorem{definition}{Définition}
 
 \graphicspath{ {./src/images/} }
 
@@ -34,6 +38,10 @@
 \include{./src/tex/cover_page.tex}
 % Intro             ===============================
 
+% Remerciments             ===============================
+\include{./src/tex/thanks.tex}
+% Remerciments             ===============================
+
 \dominitoc
 \tableofcontents
 
@@ -41,6 +49,10 @@
 % Introduction             ===============================
 \include{./src/tex/chapter_1.tex}
 % Introduction             ===============================
+
+% Définition             ===============================
+\include{./src/tex/definition.tex}
+% Définition             ===============================
 
 % Environnement             ===============================
 \include{./src/tex/chapter_2.tex}
