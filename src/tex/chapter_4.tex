@@ -120,6 +120,12 @@ Dans un premier temps, il faudra installer le système Raspbian. Une fois l’in
             \subsection{Montage du matériel}
             Le Raspberry Pi possède un port CSI 'Camera Serial Interface' (signifiant en anglais interface série pour caméra, CSI) est un standard d'interface électronique entre une caméra (un capteur ou une source vidéo) et un microprocesseur.
 
+            \begin{figure}[h]
+                \centering
+                \includegraphics[scale=0.04]{unpack.jpeg} 
+                \caption{Matériel assemblé et prêt à l'emploi}
+            \end{figure}
+
             \vspace{0.2cm}
 
             Afin de pouvoir utiliser le module camèra il nous faut donc inseré la nappe de connecteur de la caméra dans le port CSI du Raspberry Pi.
@@ -141,25 +147,22 @@ Dans un premier temps, il faudra installer le système Raspbian. Une fois l’in
                 \vspace{0.2cm}
 
                 Une fois cela fait, on lance l'écriture, le logiciel va télécharger l'OS et installer l'OS sur la microSD.
-            \end{flushleft}
 
-            \begin{figure}[ht]
+
+            \begin{figure}[t]
                 \centering
                 \includegraphics[scale=0.3]{Installation_1.png} 
                 \caption{Interface "Raspberry Pi Imager"}
             \end{figure}
 
-            \begin{figure}[ht]
-                \centering
-                \includegraphics[scale=0.05]{unpack.jpeg} 
-                \caption{Matériel assemblé et prêt à l'emploi}
-            \end{figure}
+
+            \end{flushleft}
     
             \subsection{Configuration du matériel}
             Avant de pouvoir utiliser le module caméra, activer l'interface caméra.
             Pour ce faire nous allons utiliser la commande \textbf{sudo raspi-config}.
 
-            \begin{figure}[ht]
+            \begin{figure}[h]
                 \centering
                 \includegraphics[scale=0.3]{raspi-config.png} 
                 \caption{Interface "raspi-config"}
@@ -169,7 +172,7 @@ Dans un premier temps, il faudra installer le système Raspbian. Une fois l’in
                 
                 Une fois dans \textbf{Raspi-config}, nous allons choisir la section \textbf{Interface section}.
             
-                \begin{figure}[ht]
+                \begin{figure}[h]
                     \centering
                     \includegraphics[scale=0.3]{raspiconfig-camera-option.jpg} 
                     \caption{camera option (raspi-config)}
@@ -261,23 +264,41 @@ Dans un premier temps, il faudra installer le système Raspbian. Une fois l’in
         Et nous permettra de concevoir le GUI de l'application à l'aide de Tkinter.
 
         \subsection{Création de l'interface graphique}
-            \begin{figure}[ht]
+            \begin{figure}[h]
                 \centering
                 \includegraphics[scale=0.3]{maquette.png} 
                 \caption{Maquette de l'application}
             \end{figure}
+
+            \begin{flushleft}
+                Nous allons créer 3 classes pour notre GUI qui sont :
+                \begin{itemize}
+                    \item \textbf{class} \textit{App}
+                    \item \textbf{class} \textit{AppOptionsSection}
+                    \item \textbf{class} \textit{AppHelpSection}
+                \end{itemize}
+                
+                La classe \textit{App} est la classe principale de notre application.
+                C'est ici que nous allons définir la taille de la fenêtre, la couleur de fond, le titre de la fenêtre, le logo de l'application, ... .
+                C'est également dans cette classe que nous allons lancer notre menu principal via \begin{lstlisting}[language=python]
+                    def __init__(self, master)
+                \end{lstlisting}
+    
+                Le menu principal c'est celui de la maquette en figure 4.8.                
+            \end{flushleft}
         
             
 
         \subsection{Fonction Start Recording}
             Afin de réaliser l'application, nous allons commencer par concevoir la fonction coeur de l'application.
             C'est à dire la fonction qui va nous permettre de lancer un enregistrement et de l'arrêter.    
-            Cette fonction, son fonctionnement sont érigés par la figure 4.8.
-            \begin{figure}[h]
+            Cette fonction, son fonctionnement sont érigés par la figure 4.9.
+            \begin{figure}
                 \centering
                 \includegraphics[scale=0.4]{diagram_activité_enregistrement.png} 
                 \caption{Diagramme d'activité de la fonction "Prendre un Enregistrement"}
             \end{figure}
+
 
         \subsection{Prendre une capture}
 
@@ -286,9 +307,9 @@ Dans un premier temps, il faudra installer le système Raspbian. Une fois l’in
     \section{Travaux pratiques}
     J'ai eu l'occasion de partir à la recherche de Gérridés dans la Mangrove de la Guadeloupe et d'en attraper a l'épuisette (voir Figure 3.2).
 
-    \begin{figure}[ht]
+    \begin{figure}[h]
         \centering
-        \includegraphics[scale=0.07]{mangrove.jpeg}
+        \includegraphics[scale=0.04]{mangrove.jpeg}
         \caption{Mangrove de la Guadeloupe}
     \end{figure}
         
