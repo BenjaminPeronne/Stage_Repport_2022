@@ -114,145 +114,182 @@ Dans un premier temps, il faudra installer le système Raspbian. Une fois l’in
         \end{figure}
         
     \section{Montage, Installation et Configuration}
-    % du unpack au systeme fonctionnel ... Méthodo, doc , etc ...
-    Il faut savoir que le Raspberry Pi et son module caméra arrive séparément ce qui signifie que le module est pas monté sur le Raspberry Pi.
-    Le Raspberry Pi arrive sans son système pré-installé.
-        \subsection{Montage du matériel}
-        Le Raspberry Pi possède un port CSI 'Camera Serial Interface' (signifiant en anglais interface série pour caméra, CSI) est un standard d'interface électronique entre une caméra (un capteur ou une source vidéo) et un microprocesseur.
-
-        \vspace{0.2cm}
-
-        Afin de pouvoir utiliser le module camèra il nous faut donc inseré la nappe de connecteur de la caméra dans le port CSI du Raspberry Pi.
-        \subsection{Installation du matériel}
-        Le système étant pas pré-installé, il nous faut installer le système d'exploitation.
-        Pour ce faire nous allons utiliser Raspberry Pi Imager.
-
-        \vspace{0.2cm}
-
-        \begin{flushleft}
-            Raspberry Pi Imager est le moyen rapide et facile d'installer Raspberry Pi OS sur une microSD.\\[0.2cm]
-
-            Il nous faut télécharger le fichier d'installation sur le site web Raspberry.com et de l'installer.\\[0.2cm]
-
-            Nous obtenons alors l'aperçu de la figure 4.4.\\[0.2cm]
-            Comme nous pouvons le voir sur cette figure, le logiciel nous demande de choisir l'OS que nous souhaitons installer.
-            On lui indique donc que nous voulons installer l'OS Raspbian en 32 bits. Et on choisit notre stockage qui dans notre cas est une microSD.
+        % du unpack au systeme fonctionnel ... Méthodo, doc , etc ...
+        Il faut savoir que le Raspberry Pi et son module caméra arrive séparément ce qui signifie que le module est pas monté sur le Raspberry Pi.
+        Le Raspberry Pi arrive sans son système pré-installé.
+            \subsection{Montage du matériel}
+            Le Raspberry Pi possède un port CSI 'Camera Serial Interface' (signifiant en anglais interface série pour caméra, CSI) est un standard d'interface électronique entre une caméra (un capteur ou une source vidéo) et un microprocesseur.
 
             \vspace{0.2cm}
 
-            Une fois cela fait, on lance l'écriture, le logiciel va télécharger l'OS et installer l'OS sur la microSD.
-        \end{flushleft}
+            Afin de pouvoir utiliser le module camèra il nous faut donc inseré la nappe de connecteur de la caméra dans le port CSI du Raspberry Pi.
+            \subsection{Installation du matériel}
+            Le système étant pas pré-installé, il nous faut installer le système d'exploitation.
+            Pour ce faire nous allons utiliser Raspberry Pi Imager.
 
-        \begin{figure}[ht]
-            \centering
-            \includegraphics[scale=0.3]{Installation_1.png} 
-            \caption{Interface "Raspberry Pi Imager"}
-        \end{figure}
+            \vspace{0.2cm}
 
-        \begin{figure}[ht]
-            \centering
-            \includegraphics[scale=0.05]{unpack.jpeg} 
-            \caption{Matériel assemblé et prêt à l'emploi}
-        \end{figure}
- 
-        \subsection{Configuration du matériel}
-        Avant de pouvoir utiliser le module caméra, activer l'interface caméra.
-        Pour ce faire nous allons utiliser la commande \textbf{sudo raspi-config}.
+            \begin{flushleft}
+                Raspberry Pi Imager est le moyen rapide et facile d'installer Raspberry Pi OS sur une microSD.\\[0.2cm]
 
-        \begin{figure}[ht]
-            \centering
-            \includegraphics[scale=0.3]{raspi-config.png} 
-            \caption{Interface "raspi-config"}
-        \end{figure}
+                Il nous faut télécharger le fichier d'installation sur le site web Raspberry.com et de l'installer.\\[0.2cm]
 
-        \begin{flushleft}
-            
-            Une fois dans \textbf{Raspi-config}, nous allons choisir la section \textbf{Interface section}.
-        
+                Nous obtenons alors l'aperçu de la figure 4.4.\\[0.2cm]
+                Comme nous pouvons le voir sur cette figure, le logiciel nous demande de choisir l'OS que nous souhaitons installer.
+                On lui indique donc que nous voulons installer l'OS Raspbian en 32 bits. Et on choisit notre stockage qui dans notre cas est une microSD.
+
+                \vspace{0.2cm}
+
+                Une fois cela fait, on lance l'écriture, le logiciel va télécharger l'OS et installer l'OS sur la microSD.
+            \end{flushleft}
+
             \begin{figure}[ht]
                 \centering
-                \includegraphics[scale=0.3]{raspiconfig-camera-option.jpg} 
-                \caption{camera option (raspi-config)}
+                \includegraphics[scale=0.3]{Installation_1.png} 
+                \caption{Interface "Raspberry Pi Imager"}
             \end{figure}
 
-            On selectionne \textbf{P1 Camera} et on met sur \textbf{Enable}.
+            \begin{figure}[ht]
+                \centering
+                \includegraphics[scale=0.05]{unpack.jpeg} 
+                \caption{Matériel assemblé et prêt à l'emploi}
+            \end{figure}
+    
+            \subsection{Configuration du matériel}
+            Avant de pouvoir utiliser le module caméra, activer l'interface caméra.
+            Pour ce faire nous allons utiliser la commande \textbf{sudo raspi-config}.
 
-            \vspace{0.2cm}
-
-            Une fois cela fait on peut quitter \textbf{Raspi-config} et tester si la caméra est bien activée et fonctionne correctement.
-
-            \vspace{0.2cm}
-
-            Pour ce faire, on ouvre le terminal et on tape la commance suivante :
-
-            \begin{flushleft}
-                \begin{lstlisting}[language=bash]
-                    raspistill -o Desktop/image.jpg
-                \end{lstlisting}
-            \end{flushleft}
-
-            Cette commande nous permet de prendre une photo et de la sauvegarder dans le dossier Desktop.
-
-            \vspace{0.2cm}
-
-            La photo est bien prise. De ce fait la caméra est opérationnelle.
-
-            Nous pouvons tout de même essayer de faire une vidéo.
+            \begin{figure}[ht]
+                \centering
+                \includegraphics[scale=0.3]{raspi-config.png} 
+                \caption{Interface "raspi-config"}
+            \end{figure}
 
             \begin{flushleft}
-                \begin{lstlisting}[language=bash]
-                    raspivid -o Desktop/video.h264
-                \end{lstlisting}
-            \end{flushleft}
-
-            Cette commande nous permet de prendre une vidéo et de la sauvegarder dans le dossier Desktop.
-
-            \vspace{0.2cm}
-
-            La vidéo est bien prise. Donc tout est fonctionnel.
+                
+                Une fois dans \textbf{Raspi-config}, nous allons choisir la section \textbf{Interface section}.
             
-        \end{flushleft}
+                \begin{figure}[ht]
+                    \centering
+                    \includegraphics[scale=0.3]{raspiconfig-camera-option.jpg} 
+                    \caption{camera option (raspi-config)}
+                \end{figure}
+
+                On selectionne \textbf{P1 Camera} et on met sur \textbf{Enable}.
+
+                \vspace{0.2cm}
+
+                Une fois cela fait on peut quitter \textbf{Raspi-config} et tester si la caméra est bien activée et fonctionne correctement.
+
+                \vspace{0.2cm}
+
+                Pour ce faire, on ouvre le terminal et on tape la commance suivante :
+
+                \begin{flushleft}
+                    \begin{lstlisting}[language=bash]
+                        raspistill -o Desktop/image.jpg
+                    \end{lstlisting}
+                \end{flushleft}
+
+                Cette commande nous permet de prendre une photo et de la sauvegarder dans le dossier Desktop.
+
+                \vspace{0.2cm}
+
+                La photo est bien prise. De ce fait la caméra est opérationnelle.
+
+                Nous pouvons tout de même essayer de faire une vidéo.
+
+                \begin{flushleft}
+                    \begin{lstlisting}[language=bash]
+                        raspivid -o Desktop/video.h264
+                    \end{lstlisting}
+                \end{flushleft}
+
+                Cette commande nous permet de prendre une vidéo et de la sauvegarder dans le dossier Desktop.
+
+                \vspace{0.2cm}
+
+                La vidéo est bien prise. Donc tout est fonctionnel.
+                
+            \end{flushleft}
 
     \section{Choix des technologies}
-    Pour le choix du langage de programmation, je me suis basé sur les langages de programmation les plus classés pour le (Raspberry Pi) système d'exploitation Raspbian.
-    Lors de ma recherche 5 langages de programmation en sont sortis : 
+        Pour le choix du langage de programmation, je me suis basé sur les langages de programmation les plus classés pour le (Raspberry Pi) système d'exploitation Raspbian.
+        Lors de ma recherche 5 langages de programmation en sont sortis : 
 
-    \vspace{0.2cm}
+        \vspace{0.2cm}
 
-    \begin{itemize}
-        \item Python
-        \item C
-        \item Java/BlueJ
-        \item Perl
-        \item Scratch
-    \end{itemize}
+        \begin{itemize}
+            \item Python
+            \item C
+            \item Java/BlueJ
+            \item Perl
+            \item Scratch
+        \end{itemize}
 
-    \begin{flushleft}
-        On peut voir que le langage Python est le plus utilisé pour le (Raspberry Pi) système d'exploitation Raspbian.
+        \begin{flushleft}
+            On peut voir que le langage Python est le plus utilisé pour le (Raspberry Pi) système d'exploitation Raspbian.
 
-        Ce qui est normal, car le Pi dans "Raspberry Pi" signifie "Python". Il a donc le mérite d'être le choix par défaut.
+            Ce qui est normal, car le Pi dans "Raspberry Pi" signifie "Python". Il a donc le mérite d'être le choix par défaut.
 
-        Afin de pouvoir me décider sur le langage de programmation, il me faut chercher la compatibilité des API pour la camera. 
+            Afin de pouvoir me décider sur le langage de programmation, il me faut chercher la compatibilité des API pour la camera. 
 
-        Il s'avère que l'API PiCamera est installer par défaut sur le système d'exploitation Raspbian.
+            Il s'avère que l'API PiCamera est installer par défaut sur le système d'exploitation Raspbian.
 
-        Puisque le langage Python et l'API PiCamera sont compatibles, et installer par défaut sur le système d'exploitation Raspbian, il est possible de choisir le langage Python.
-    
-        Même si le langage de programmation JavaScript ne figure pas dans cette liste, il est très utilisé, il est donc très intéressant de le choisir.
-        Avec electron et nodejs, nous pouvons très bien créer une application multiplatforme.\\[0.2cm]
-        De plus, l'API PiCamera est disponible pour le langage JavaScript.
-    
-        Mais par manque de temps, nodejs et electron ne sont pas installés par défaut sur le Raspberry Pi.\\[0.2cm]
-    
-        De ce fait nous allons utiliser le langage Python pour la programmation du logiciel.
+            Puisque le langage Python et l'API PiCamera sont compatibles, et installer par défaut sur le système d'exploitation Raspbian, il est possible de choisir le langage Python.
         
-        Python est un langage de programmation interprété, multi-paradigme et multiplateformes. Il favorise la programmation impérative structurée, fonctionnelle et orientée objet.
-    
-    \end{flushleft}
+            Même si le langage de programmation JavaScript ne figure pas dans cette liste, il est très utilisé, il est donc très intéressant de le choisir.
+            Avec electron et nodejs, nous pouvons très bien créer une application multiplatforme.\\[0.2cm]
+            De plus, l'API PiCamera est disponible pour le langage JavaScript.
+        
+            Mais par manque de temps, nodejs et electron ne sont pas installés par défaut sur le Raspberry Pi.\\[0.2cm]
+        
+            De ce fait nous allons utiliser le langage Python pour la programmation du logiciel.
+            
+            Python est un langage de programmation interprété, multi-paradigme et multiplateformes. Il favorise la programmation impérative structurée, fonctionnelle et orientée objet.
+            
+            % définir le multi-paradigme
+            % définir le multiplateformes
+            % Programattion interprété, structurée, fonctionnelle et orientée objet
+        \end{flushleft}
 
     % Qu'est ce que le langage Python ?
     
     \section{Réalisation de l'application}
-    
+        Avant tout chose, nous allons créer une maquette de l'application.
+        Cette maquette nous permettra d'avoir un aperçu de l'application.
+        Et nous permettra de concevoir le GUI de l'application à l'aide de Tkinter.
+
+        \subsection{Création de l'interface graphique}
+            \begin{figure}[ht]
+                \centering
+                \includegraphics[scale=0.3]{maquette.png} 
+                \caption{Maquette de l'application}
+            \end{figure}
+        
+            
+
+        \subsection{Fonction Start Recording}
+            Afin de réaliser l'application, nous allons commencer par concevoir la fonction coeur de l'application.
+            C'est à dire la fonction qui va nous permettre de lancer un enregistrement et de l'arrêter.    
+            Cette fonction, son fonctionnement sont érigés par la figure 4.8.
+            \begin{figure}[h]
+                \centering
+                \includegraphics[scale=0.4]{diagram_activité_enregistrement.png} 
+                \caption{Diagramme d'activité de la fonction "Prendre un Enregistrement"}
+            \end{figure}
+
+        \subsection{Prendre une capture}
+
+        \subsection{Options caméra}
+
+    \section{Travaux pratiques}
+    J'ai eu l'occasion de partir à la recherche de Gérridés dans la Mangrove de la Guadeloupe et d'en attraper a l'épuisette (voir Figure 3.2).
+
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[scale=0.07]{mangrove.jpeg}
+        \caption{Mangrove de la Guadeloupe}
+    \end{figure}
         
         

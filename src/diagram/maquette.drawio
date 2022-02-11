@@ -1,0 +1,37 @@
+<mxfile host="65bd71144e">
+    <diagram id="VtBNZxso6-EgRPa9i30S" name="Page-1">
+        <mxGraphModel dx="1298" dy="852" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="224" y="90" width="380" height="720" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="Start" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="317" y="140" width="194" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Stop" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="317" y="220" width="194" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="Prendre une photo" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="317" y="320" width="194" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="Afficher Previw" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="317" y="390" width="194" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="Masquer Preview" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="317" y="460" width="194" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="Options Caméra" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="317" y="534.5" width="194" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="Aide" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="317" y="610" width="194" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="Quitter" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="297.6" y="700" width="232.8" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
