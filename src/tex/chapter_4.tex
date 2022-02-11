@@ -1,13 +1,16 @@
 \chapter{Travail réalisé}
+Avant de commencer, je vous présente mon travail sur le sujet du stage.\\[0.2cm]
+Dans un premier temps, il faudra installer le système Raspbian. Une fois l’installation faire, il faudra configurer le système. Avant de commencer l’application, il me faudra faite quelques tests afin de vérifier le bon fonctionnement. Une fois cela terminé, il me faut vérifier que la caméra fonctionne correctement.
+
     \section{Mon travail}
     % Présentation du travail a effectuer sur le projet.
     \begin{flushleft}
-        Avant de commencer, je vous présente mon travail sur le sujet du stage.
-
-        \vspace{0.2cm}
+        % A faire |!|
+        Ma mission est de réaliser l'installation et de configurer un dispositif de capture vidéo réalisé par un \textit{Raspberry Pi} ainsi que de développer une application conviviale pour la gestion des vidéos.\\[0.2cm]
     
+        % A revoir |!|
         Dans un premier temps, il faudra installer le système Raspbian.
-        Une fois l'installation faire, il faudra configurer le système.
+        Une fois l'installation faite, il faudra configurer le système.
         Avant de commencer l'application, il me faudra faire quelques tests afin de vérifier le bon fonctionnement.
         Une fois cela terminé, il me faut vérifier que la caméra fonctionne correctement.    
     \end{flushleft}
@@ -15,15 +18,69 @@
     \section{Présentation du Matérriel}
         \subsection{Raspberry Pi}
         Le \textit{Raspberry Pi} est un ordinateur portable de petite taille, doté d'un processeur ARM et d'un système d'exploitation Linux.
-        \begin{figure}[h]
+
+        % Intérêt :
+        % - cout, manipulation
+        % Inconvénients :
+        % - la qualité ?
+        % - configuration pas toiujours simple - fragile
+
+        % Raspberry Pi 4 Model B :
+
+        \vspace{0.2cm}
+
+        \begin{flushleft}
+            \begin{itemize}
+                \item \textbf{Intérêt :}
+                Le principal intêret de ce type de matériel est son coût qui est très faible. Comme le montre le tableau ci-dessous.
+            \end{itemize}                       
+
+            \begin{center}
+                \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}|  }
+                    \hline
+                    Nom & Processeur & RAM & Prix\\
+                    \hline
+                    Raspberry Pi 2w & 1.5 GHz Quad-Core A72 & 512Mb & 15€\\
+                    \hline
+                    Raspberry Pi 3 & 1.4 GHz Quad-Core A53 & 1Gb & 35€\\
+                    \hline
+                    Raspberry Pi 4 & 1.8 GHz Quad-Core A72 & 2Gb & 45€\\
+                    \hline
+                \end{tabular}            
+            \end{center}
+
+            Le Raspberry Pi est également simple à manipuler. Néamoins il possède certains Inconvénients.
+
+            \begin{center}
+                \begin{itemize}
+                    \item \textbf{Inconvénients :}
+                    En vu de sa petite taille, il est très fragile mais égalemnt très peu performant.
+                    Sa configuration n'est pas toujours simple à réaliser.
+                    Nous pouvons toujours augmenter les performances du Raspberry Pi via à de l'\underline{Overclocking} mais il faudrait un système de refroidissement pour le Raspberry Pi.
+                \end{itemize}
+            \end{center}
+
+
+
+        \end{flushleft}     
+            
+        \begin{figure}[ht]
             \centering
             \includegraphics[scale=0.2]{rasp.jpg}
             \caption{Raspberry Pi 4}
         \end{figure}
-
-        \subsection{Ecran LCD (Raspberry Pi) tailles}
+        
+ 
+        \subsection{Ecran LCD (Raspberry Pi)}
         Avec le \textit{Raspberry Pi} un écran LCD de 7 pouces permettant d'interagir avec l'ordinateur grâce à son écran tactile. 
-        \begin{figure}[h]
+
+        \begin{flushleft}
+            L'Intérêt majeur de ce type de périphérique c'est sa finesse.
+            En effet, dans un laboratoire il est pas toujours facil d'avoir un grand écran.
+            De ce fait avoir un écran de petite taille qu'on peut tenir dans nos main tout en ayant la possibilité d'utiliser l'écran tactile pour interagir avec l'ordinateur nous permettant de nous dispenser de clavier et de souris.
+        \end{flushleft}
+
+        \begin{figure}[ht]
             \centering
             \includegraphics[scale=0.05]{ecran7p.jpg} 
             \caption{Ecran LCD de 7 pouces}
@@ -33,15 +90,129 @@
 
         \subsection{Module de capture vidéo (Raspberry Pi) V2}
         Le module de capture vidéo (Raspberry Pi) V2 est un module de captation vidéo qui permet de capturer des images et des vidéos.
-        \begin{figure}[h]
+
+        % intérêt :
+        % - cout, manipulation
+        % Inconvénients :
+        % - la qualité ?
+        % - configuration pas toiujours simple - fragile
+
+        \begin{flushleft}
+            \begin{itemize}
+                \item \textbf{Intérêt :}
+                Le principal Intérêt de ce module est son coût qui est très faible. De plus tout comme le Raspberry Pi, il est très facile a manipuler. 
+                \item \textbf{Inconvénients :}
+                Cependant la qualité de ce module camèra est relativement mauvaise. et la configuration et l'utilisation est pas toujours évident.
+                De plus il est très fragile.
+            \end{itemize}                
+        \end{flushleft}
+
+        \begin{figure}[ht]
             \centering        
             \includegraphics[scale=0.1]{module_cam.jpg}
             \caption{Module de capture vidéo (Raspberry Pi) V2}
         \end{figure}
         
     \section{Montage, Installation et Configuration}
-        \subsection{Installation du matériel}  
+    % du unpack au systeme fonctionnel ... Méthodo, doc , etc ...
+    Il faut savoir que le Raspberry Pi et son module caméra arrive séparément ce qui signifie que le module est pas monté sur le Raspberry Pi.
+    Le Raspberry Pi arrive sans son système pré-installé.
+        \subsection{Montage du matériel}
+        Le Raspberry Pi possède un port CSI 'Camera Serial Interface' (signifiant en anglais interface série pour caméra, CSI) est un standard d'interface électronique entre une caméra (un capteur ou une source vidéo) et un microprocesseur.
+
+        \vspace{0.2cm}
+
+        Afin de pouvoir utiliser le module camèra il nous faut donc inseré la nappe de connecteur de la caméra dans le port CSI du Raspberry Pi.
+        \subsection{Installation du matériel}
+        Le système étant pas pré-installé, il nous faut installer le système d'exploitation.
+        Pour ce faire nous allons utiliser Raspberry Pi Imager.
+
+        \vspace{0.2cm}
+
+        \begin{flushleft}
+            Raspberry Pi Imager est le moyen rapide et facile d'installer Raspberry Pi OS sur une microSD.\\[0.2cm]
+
+            Il nous faut télécharger le fichier d'installation sur le site web Raspberry.com et de l'installer.\\[0.2cm]
+
+            Nous obtenons alors l'aperçu de la figure 4.4.\\[0.2cm]
+            Comme nous pouvons le voir sur cette figure, le logiciel nous demande de choisir l'OS que nous souhaitons installer.
+            On lui indique donc que nous voulons installer l'OS Raspbian en 32 bits. Et on choisit notre stockage qui dans notre cas est une microSD.
+
+            \vspace{0.2cm}
+
+            Une fois cela fait, on lance l'écriture, le logiciel va télécharger l'OS et installer l'OS sur la microSD.
+        \end{flushleft}
+
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[scale=0.3]{Installation_1.png} 
+            \caption{Interface "Raspberry Pi Imager"}
+        \end{figure}
+
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[scale=0.05]{unpack.jpeg} 
+            \caption{Matériel assemblé et prêt à l'emploi}
+        \end{figure}
+ 
         \subsection{Configuration du matériel}
+        Avant de pouvoir utiliser le module caméra, activer l'interface caméra.
+        Pour ce faire nous allons utiliser la commande \textbf{sudo raspi-config}.
+
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[scale=0.3]{raspi-config.png} 
+            \caption{Interface "raspi-config"}
+        \end{figure}
+
+        \begin{flushleft}
+            
+            Une fois dans \textbf{Raspi-config}, nous allons choisir la section \textbf{Interface section}.
+        
+            \begin{figure}[ht]
+                \centering
+                \includegraphics[scale=0.3]{raspiconfig-camera-option.jpg} 
+                \caption{camera option (raspi-config)}
+            \end{figure}
+
+            On selectionne \textbf{P1 Camera} et on met sur \textbf{Enable}.
+
+            \vspace{0.2cm}
+
+            Une fois cela fait on peut quitter \textbf{Raspi-config} et tester si la caméra est bien activée et fonctionne correctement.
+
+            \vspace{0.2cm}
+
+            Pour ce faire, on ouvre le terminal et on tape la commance suivante :
+
+            \begin{flushleft}
+                \begin{lstlisting}[language=bash]
+                    raspistill -o Desktop/image.jpg
+                \end{lstlisting}
+            \end{flushleft}
+
+            Cette commande nous permet de prendre une photo et de la sauvegarder dans le dossier Desktop.
+
+            \vspace{0.2cm}
+
+            La photo est bien prise. De ce fait la caméra est opérationnelle.
+
+            Nous pouvons tout de même essayer de faire une vidéo.
+
+            \begin{flushleft}
+                \begin{lstlisting}[language=bash]
+                    raspivid -o Desktop/video.h264
+                \end{lstlisting}
+            \end{flushleft}
+
+            Cette commande nous permet de prendre une vidéo et de la sauvegarder dans le dossier Desktop.
+
+            \vspace{0.2cm}
+
+            La vidéo est bien prise. Donc tout est fonctionnel.
+            
+        \end{flushleft}
+
     \section{Choix des technologies}
     Pour le choix du langage de programmation, je me suis basé sur les langages de programmation les plus classés pour le (Raspberry Pi) système d'exploitation Raspbian.
     Lors de ma recherche 5 langages de programmation en sont sortis : 
@@ -56,11 +227,16 @@
         \item Scratch
     \end{itemize}
 
-    \vspace{0.2cm}
-
     \begin{flushleft}
-        Ainsi que la disponibilité d'une API afin de pouvoir utiliser la caméra.
-        J'ai donc fait le choix de l'API PiCamera car c'est celle qui est par défaut installée sur le Raspberry Pi donc nativement compatible avec la caméra.\\[0.2cm]
+        On peut voir que le langage Python est le plus utilisé pour le (Raspberry Pi) système d'exploitation Raspbian.
+
+        Ce qui est normal, car le Pi dans "Raspberry Pi" signifie "Python". Il a donc le mérite d'être le choix par défaut.
+
+        Afin de pouvoir me décider sur le langage de programmation, il me faut chercher la compatibilité des API pour la camera. 
+
+        Il s'avère que l'API PiCamera est installer par défaut sur le système d'exploitation Raspbian.
+
+        Puisque le langage Python et l'API PiCamera sont compatibles, et installer par défaut sur le système d'exploitation Raspbian, il est possible de choisir le langage Python.
     
         Même si le langage de programmation JavaScript ne figure pas dans cette liste, il est très utilisé, il est donc très intéressant de le choisir.
         Avec electron et nodejs, nous pouvons très bien créer une application multiplatforme.\\[0.2cm]
@@ -69,13 +245,14 @@
         Mais par manque de temps, nodejs et electron ne sont pas installés par défaut sur le Raspberry Pi.\\[0.2cm]
     
         De ce fait nous allons utiliser le langage Python pour la programmation du logiciel.
-        Le Pi dans "Raspberry Pi" signifie "Python". Il a le mérite d'être le choix par défaut, il est installé par défaut sur le Raspberry Pi et le module PiCamera est disponible.\\[0.2cm]
+        
+        Python est un langage de programmation interprété, multi-paradigme et multiplateformes. Il favorise la programmation impérative structurée, fonctionnelle et orientée objet.
     
-        Donc je vais utiliser le langage Python pour la programmation du logiciel et l'API PiCamera pour la capture vidéo.
     \end{flushleft}
 
     % Qu'est ce que le langage Python ?
     
     \section{Réalisation de l'application}
+    
         
         
