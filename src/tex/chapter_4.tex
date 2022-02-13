@@ -430,17 +430,85 @@ Dans un premier temps, il faudra installer le système Raspbian. Une fois l’in
         \subsection{Travail en laboratoire}
         Tout le système que nous avons crée jusqu'à maintenant est destiné à être utilisé dans un laboratoire.
 
-        \begin{figure}[ht]
-            \centering
-            \includegraphics[scale=0.09]{setup.jpeg} 
-            \caption{Le dispositif installé dans le laboratoire}
-        \end{figure}
+        \begin{flushleft}        
+            De ce fait, le module camèra sera installé sur un potence au dessus d'un bac ou sera installé divers espèce lors des expérimentations.
 
-        J'ai eu l'occasion de partir à la recherche de Gérridés dans la Mangrove de la Guadeloupe et d'en attraper a l'épuisette (voir Figure 3.2).
-        \begin{figure}[ht]
-            \centering
-            \includegraphics[scale=0.04]{mangrove.jpeg}
-            \caption{Mangrove de la Guadeloupe}
-        \end{figure}
-        
-        
+            \vspace{0.2cm}
+
+            Cette installation suit la figure 4.11.
+
+            % \vspace{0.2cm}
+
+            \begin{figure}[ht]
+                \centering
+                \includegraphics[scale=0.06]{setup.jpeg} 
+                \caption{Le dispositif installé dans le laboratoire}
+            \end{figure}
+
+            Nous pouvons voir que le Raspberry Pi est installé sur un potence dans un boitier afin de le protéger des divers éclaboussures, il en va de même pour la caméra qui se trouve en bas de la potence.
+
+            \vspace{0.2cm}
+
+            Plus à gauche, nous pouvons voir l'écran tactile qui ne prend pas énormement de place, et qui est relativement amovible.
+
+            \vspace{0.2cm}
+
+
+    
+            J'ai également eu l'occasion de partir à la recherche de Gérridés dans la Mangrove de la Guadeloupe et d'en attraper a l'épuisette (voir Figure 4.12).
+
+            \begin{figure}[ht]
+                \centering
+                \includegraphics[scale=0.08]{mangrove.jpeg}
+                \caption{Mangrove de la Guadeloupe}
+            \end{figure}
+            
+        \end{flushleft}
+
+        \subsection{Travail sur la caméra}
+        Le module camèra est très certainement celle qui nous à posé le plus de problème.
+
+        \begin{flushleft}
+            Pendant une grande partie des expérimentations, nous avons eu divers problème lors des enregistrements.
+
+            \vspace{0.2cm}
+    
+            Commencent par des problèmes de stockage de la vidéo, pour nos éxpérimentations, nous devosn réaliser des enregistrement d'une vingtaine de minutes.
+            Pour une vidéo de 20 minutes, nous avions besoin de plus de 4Go de mémoire.
+            Cela était trop grand pour le stockage de la vidéo sur le Raspberry Pi.
+    
+            \vspace{0.2cm}
+    
+            Nous avons également eux des soucis d'éclairage, qui provoquait des effets d'anneaux sur la vidéo, cela à plus ou moins été régler en modifiant le \underline{bitrate} de l'enregistrement ainsi qu'en métant le dispositif projet dans un endroit où il n'y a pas d'éclairage.
+            L'utilisateur peut également modifier le contrast et la luminosité de la vidéo afin d'avoir un meilleur rendu.
+    
+            \vspace{0.2cm}
+    
+            Nous avons rencontré également deux autres problèmes qui sont notament les effets de zoom lors de nos enregistrement qui étaient du à une trop forte résolution de la caméra ainsi qu'un problème de saut d'image dans nos enregistrement. Cela étant du au format de la vidéo, lors de la conversion vidéo en format mp4, ce soucis n'apparaisait plus.
+    
+            \vspace{0.2cm}
+    
+            Cela laisse à supposer que l'écriture au format H264 n'était pas adapté pour la configuration de notre Raspberry Pi.
+    
+            \subsection{Travail sur vidéo}
+            % Ajout de la partie mise au point de la vidéo
+            Après avoir utilisé notre dispositif lors des expérimentations, les biologistres on besoin de résultat et pour ce faire nous devons extraire un certain nombre d'image des vidéos.
+    
+            \vspace{0.2cm}
+
+            Pour ce faire, nous utilisons une commande de ffmpeg :
+            \begin{verbatim}
+                ffmpeg -i Nom_Vid.h264 -r .6 -q:v 1  ./Nom_Vid_%6d.jpg
+            \end{verbatim}
+
+            Nous remarquons que cela n'est pas simple d'utiliser cette commande, de ce fait nous avons créer une fonction permettant à l'utilisateur de choisir une vidéo ainsi que le dossier ou il souhaite enregistrées les images extraites.
+
+            \vspace{0.2cm}
+
+            Une fois que nous avons nos images, nous pouvons les annoter avec un logiciel en ligne : \textbf{www.robots.ox.ac.uk}.
+            Mais le gros problème, c'est qu'il nous faut annoter les images de façon manuelle et une par une, et afin d'avoir des résultats précis il nous faut travailler avec d'énorme quantité d'image, pour un idividus annoter environs 900 images n'est pas choses facile.
+
+            \vspace{0.2cm}
+
+            Nous allons donc voir dans la conclusion comment nous améliorer notre système pour que les biologistes puissent travailler avec plus de confort et de rapidité tout en ayant des résultats d'expérimentations de qualité.
+        \end{flushleft}
