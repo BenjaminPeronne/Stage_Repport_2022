@@ -15,7 +15,7 @@ Dans un premier temps, il faudra installer le système Raspbian. Une fois l’in
         Une fois cela terminé, il me faut vérifier que la caméra fonctionne correctement.    
     \end{flushleft}
 
-    \section{Présentation du Matérriel}
+    \section{Réception du matériel}
         \subsection{Raspberry Pi}
         Le \textit{Raspberry Pi} est un ordinateur portable de petite taille, doté d'un processeur ARM et d'un système d'exploitation Linux.
 
@@ -130,6 +130,7 @@ Dans un premier temps, il faudra installer le système Raspbian. Une fois l’in
 
             Afin de pouvoir utiliser le module camèra il nous faut donc inseré la nappe de connecteur de la caméra dans le port CSI du Raspberry Pi.
             \subsection{Installation du matériel}
+            % Qu'est ce que linux
             Le système étant pas pré-installé, il nous faut installer le système d'exploitation.
             Pour ce faire nous allons utiliser Raspberry Pi Imager.
 
@@ -259,9 +260,21 @@ Dans un premier temps, il faudra installer le système Raspbian. Une fois l’in
     % Qu'est ce que le langage Python ?
     
     \section{Réalisation de l'application}
-        Avant tout chose, nous allons créer une maquette de l'application.
-        Cette maquette nous permettra d'avoir un aperçu de l'application.
-        Et nous permettra de concevoir le GUI de l'application à l'aide de Tkinter.
+        Avant toutes choses, nous allons importer les modules nécessaires.
+        Nous allons utiliser les modules :
+        \begin{itemize}
+            \item \textbf{picamera}
+            \item \textbf{tkinter}
+            \item \textbf{datetime}
+            \item \textbf{os}
+            \item \textbf{time}
+        \end{itemize}
+
+        \begin{flushleft}
+            Maintenant que nos modules sont importés, nous allons créer une maquette du menu principal de l'application.
+            Cette maquette nous permettra d'avoir un aperçu de l'application.
+            Et nous permettra de concevoir le GUI de l'application à l'aide de Tkinter.            
+        \end{flushleft}
 
         \subsection{Création de l'interface graphique}
             \begin{figure}[h]
@@ -271,46 +284,156 @@ Dans un premier temps, il faudra installer le système Raspbian. Une fois l’in
             \end{figure}
 
             \begin{flushleft}
-                Nous allons créer 3 classes pour notre GUI qui sont :
+                Nous allons créer 5 classes pour notre GUI qui sont :
                 \begin{itemize}
                     \item \textbf{class} \textit{App}
+                    \item \textbf{class} \textit{AppPhotoSection}
                     \item \textbf{class} \textit{AppOptionsSection}
+                    \item \textbf{class} \textit{AppUtilitySection}
                     \item \textbf{class} \textit{AppHelpSection}
                 \end{itemize}
                 
                 La classe \textit{App} est la classe principale de notre application.
                 C'est ici que nous allons définir la taille de la fenêtre, la couleur de fond, le titre de la fenêtre, le logo de l'application, ... .
-                C'est également dans cette classe que nous allons lancer notre menu principal via \begin{lstlisting}[language=python]
-                    def __init__(self, master)
-                \end{lstlisting}
-    
-                Le menu principal c'est celui de la maquette en figure 4.8.                
+                C'est également dans cette classe que nous allons lancer notre menu principal par la méthode : \textbf{def \_\_init\_\_(self, master)}.
+            
+                La méthode \_\_init\_\_ peut être appelée lorsqu'un objet est créé à partir de la classe, et un accès est nécessaire pour initialiser les attributs de la classe.
+
+                \vspace{0.2cm}
+
+                Le menu principal est représenté par la maquette de la figure 4.8.
+
+                \vspace{0.2cm}
+
+                Les 4 autres class sont les classes qui représentent les sections de l'application.
+                Lorsque que l'utilisateur clique sur un des boutons du menu principal, il se rend dans la section correspondante.
+
+                % tk.frame 
+
             \end{flushleft}
         
-            
+        \vspace{1cm}
 
         \subsection{Fonction Start Recording}
             Afin de réaliser l'application, nous allons commencer par concevoir la fonction coeur de l'application.
             C'est à dire la fonction qui va nous permettre de lancer un enregistrement et de l'arrêter.    
-            Cette fonction, son fonctionnement sont érigés par la figure 4.9.
-            \begin{figure}
+            Cette fonction, son fonctionnement est érigés par la figure 4.9
+            \begin{figure}[h]
                 \centering
                 \includegraphics[scale=0.4]{diagram_activité_enregistrement.png} 
-                \caption{Diagramme d'activité de la fonction "Prendre un Enregistrement"}
+                \caption{Diagramme d'activité de la fonction "Démarer un Enregistrement"}
             \end{figure}
+
+            \begin{flushleft}
+                D'après notre diagramme d'activité, il nous faut commencer l'enregistrement lorsque l'utilisateur clique sur le bouton "Start".
+
+                \vspace{0.2cm}
+
+                Avant de pouvoir démarrer un enregistrement, il faut initialiser la caméra, pour cela, la documentation nous indique une fonction pour cela qui est : \textbf{camera = PiCamera()}.
+
+                Une fois la caméra initialisée, nous pouvons commencer à traiter la demande de l'utilisateur.
+
+                
+                \textbf{AskForSaveFile} est une fonction de tkinter qui va nous permettre de demander à l'utilisateur de saisir un nom de fichier et de lui permettre de choisir l'emplacement de sauvegarde.
+
+                \vspace{0.2cm}
+
+                Une fois que l'utilisateur a saisi le nom de fichier, nous pouvons commencer à enregistrer avec la fonction de l'API PiCamera : \textbf{camera.start\_recording(nomDuFichier, format)}.
+                L'enregistrement restera actif tant que l'utilisateur ne clique pas sur le bouton "Stop".
+                L'arrêt de l'enregistrement se fait avec la fonction de l'API PiCamera : \textbf{camera.stop\_recording()}.
+
+                \vspace{0.2cm}
+                Lors des tests, nous avons remarqué qu'arrêter l'enregistrement de manière manuelle est parfois pas très optimale.
+                Nous avons donc décider de créer une fonction nous permettant de stopper de manière automati l'enregistrement.
+
+                \vspace{0.2cm}
+
+                Il s'agit de permettre à l'utilisateur de saisir un temps en minutes et de lancer l'enregistrement.
+
+                \vspace{0.2cm}
+
+                Le temps saisie en minute de l'utilisateur sera converti en secondes.
+
+                De ce fait, l'API PiCamera nous permet de définir le temps d'enregistrement en secondes avec la fonction : \textbf{camera.wait\_recording(tempsEnSeconde)}.
+                
+                \vspace{0.2cm}
+
+                Cependant cette fonction possède un défaut, elle agit comme une fonction \textbf{wait()} classique. De ce fait, durant l'enregistrement, l'utilisateur ne peut pas interagir avec l'application.
+
+                Une fois que nous n'utilison plus la caméra, nous pouvons couper toute utilisation de la caméra avec la fonction de l'API PiCamera : \textbf{camera.close()}.
+
+            \end{flushleft}
 
 
         \subsection{Prendre une capture}
+        La fonction prendre une capture est une fonction qui va nous permettre de prendre une photo.
+        Cette fonction est érigée par la figure 4.10.
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[scale=0.4]{diagram_3.png} 
+            \caption{Diagramme d'activité de la fonction "Prendre une capture"}
+        \end{figure}
 
-        \subsection{Options caméra}
 
-    \section{Travaux pratiques}
-    J'ai eu l'occasion de partir à la recherche de Gérridés dans la Mangrove de la Guadeloupe et d'en attraper a l'épuisette (voir Figure 3.2).
+        \begin{flushleft}
+            Contrairement à la fonction \textbf{Démarrer un Enregistrement}, cette fonction est plus simple dans l'ensemble de son fonctionnement.
 
-    \begin{figure}[h]
-        \centering
-        \includegraphics[scale=0.04]{mangrove.jpeg}
-        \caption{Mangrove de la Guadeloupe}
-    \end{figure}
+            \vspace{0.2cm}
+
+            Tout d'abord, comme nous l'avons vu pour la fonction \textbf{Démarrer un Enregistrement}, nous allons initialiser la caméra.
+
+            \vspace{0.2cm}
+    
+            Une fois celle-ci initialisée, nous allons demander à l'utilisateur de saisir un nom de fichier et l'emplacement de sauvegarde.
+
+            \vspace{0.2cm}
+    
+            Une fois cela fait, il nous faudra pré-chauffer la caméra afin de pouvoir lancer la capture d'image.
+            
+            \vspace{0.2cm}
+    
+            Avec la fonction \textbf{sleep()}, nous allons attendre un certain délai avant de lancer la capture.
+            Pour le pré-chauffahe, 2-3 secondes suffiront.
+
+            \vspace{0.2cm}
+    
+            Une fois cela fait, nous pouvons lancer la capture avec la fonction de l'API \textbf{camera.capture(nomDuFichier, format)}.
+            
+            \vspace{0.2cm}
+
+            Nous avons également décidé d'ajouter une fonction permettant de prendre des photos en continu.
+
+            \vspace{0.2cm}
+
+            Nous allons donc créer une fonction permettant de prendre des photos en continu.
+            Afin de pouvoir faire cela, nous allons demander à l'utilisateur de saisir un nom de fichier et l'emplacement de sauvegarde comme précédemment.
+            Mais avant cela, nous demandons à l'utilisateur de choisir le nombre de photos à prendre.
+
+            \vspace{0.2cm}
+
+            Pour cela, nous utilison une boucle telle que : 
+            \begin{verbatim}
+                for nomDuFichier in camera.record_sequence(
+                    '%d.h264' % i for i in range(1, nombreDePhoto)):
+                camera.wait_recording(6)
+            \end{verbatim}
+
+            Tant que le nombre de photos voulue n'est pas atteint, nous allons continuer à prendre des photos toutes les 6 secondes.
+
+            \vspace{0.2cm}
+
+            Nous avons mis un délai de 6 secondes entre chaque photo afin que la prise ne soit pas exactement identique à la précédente.
+        \end{flushleft}
+
+        
+
+        \subsection{Travaux pratiques}
+        J'ai eu l'occasion de partir à la recherche de Gérridés dans la Mangrove de la Guadeloupe et d'en attraper a l'épuisette (voir Figure 3.2).
+
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[scale=0.04]{mangrove.jpeg}
+            \caption{Mangrove de la Guadeloupe}
+        \end{figure}
         
         
