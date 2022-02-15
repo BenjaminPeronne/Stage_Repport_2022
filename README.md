@@ -1,4 +1,4 @@
-Résumé {#résumé .unnumbered}
+Résumé
 ======
 
 Dans ce rapport sont présentées les différentes étapes de conception du
@@ -17,7 +17,7 @@ permettre aux biologistes de récupérer les différentes enregistrements
 via a différents type de périphériques externe de stockage en ayant
 également une possibilité de les visualiser depuis le dispositif.
 
-Abstract {#abstract .unnumbered}
+Abstract
 ========
 
 In this report are presented the different stages of design of the video
