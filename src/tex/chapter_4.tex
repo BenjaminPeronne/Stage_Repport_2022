@@ -1,9 +1,9 @@
 \chapter{Travail réalisé}
-Avant de commencer, je vous présente mon travail sur le sujet du stage.\\[0.2cm]
-Dans un premier temps, il faudra installer le système Raspbian. Une fois l’installation faire, il faudra configurer le système. Avant de commencer l’application, il me faudra faite quelques tests afin de vérifier le bon fonctionnement. Une fois cela terminé, il me faut vérifier que la caméra fonctionne correctement.
+    Avant de commencer, je vous présente mon travail sur le sujet du stage.\\[0.2cm]
+    Dans un premier temps, il faudra installer le système Raspbian. Une fois l’installation faire, il faudra configurer le système. Avant de commencer l’application, il me faudra faite quelques tests afin de vérifier le bon fonctionnement. Une fois cela terminé, il me faut vérifier que la caméra fonctionne correctement.
 
     \section{Mon travail}
-    % Présentation du travail a effectuer sur le projet.
+    % Présentation du travail à effectuer sur le projet.
     \begin{flushleft}
         % A faire |!|
         Ma mission est de réaliser l'installation et de configurer un dispositif de capture vidéo réalisé par un \textit{Raspberry Pi} ainsi que de développer une application conviviale pour la gestion des vidéos.\\[0.2cm]
@@ -23,7 +23,7 @@ Dans un premier temps, il faudra installer le système Raspbian. Une fois l’in
         % - cout, manipulation
         % Inconvénients :
         % - la qualité ?
-        % - configuration pas toiujours simple - fragile
+        % - configuration pas toujours simple - fragile
 
         % Raspberry Pi 4 Model B :
 
@@ -32,7 +32,7 @@ Dans un premier temps, il faudra installer le système Raspbian. Une fois l’in
         \begin{flushleft}
             \begin{itemize}
                 \item \textbf{Intérêt :}
-                Le principal intêret de ce type de matériel est son coût qui est très faible. Comme le montre le tableau ci-dessous.
+                Le principal intérêt de ce type de matériel est son coût qui est très faible. Comme le montre le tableau ci-dessous.
             \end{itemize}                       
 
             \begin{center}
@@ -54,12 +54,11 @@ Dans un premier temps, il faudra installer le système Raspbian. Une fois l’in
             \begin{center}
                 \begin{itemize}
                     \item \textbf{Inconvénients :}
-                    En vu de sa petite taille, il est très fragile mais égalemnt très peu performant.
+                    En vue de sa petite taille, il est très fragile mais également très peu performant.
                     Sa configuration n'est pas toujours simple à réaliser.
                     Nous pouvons toujours augmenter les performances du Raspberry Pi via à de l'\underline{$ Overclocking^{\ref{def:Overclocking}}$} mais il faudrait un système de refroidissement pour le Raspberry Pi.
                 \end{itemize}
             \end{center}
-
 
 
         \end{flushleft}     
@@ -76,8 +75,8 @@ Dans un premier temps, il faudra installer le système Raspbian. Une fois l’in
 
         \begin{flushleft}
             L'Intérêt majeur de ce type de périphérique c'est sa finesse.
-            En effet, dans un laboratoire il est pas toujours facil d'avoir un grand écran.
-            De ce fait avoir un écran de petite taille qu'on peut tenir dans nos main tout en ayant la possibilité d'utiliser l'écran tactile pour interagir avec l'ordinateur nous permettant de nous dispenser de clavier et de souris.
+            En effet, dans un laboratoire il n’est pas toujours facile d'avoir un grand écran.
+            De ce fait avoir un écran de petite taille qu'on peut tenir dans nos mains tout en ayant la possibilité d'utiliser l'écran tactile pour interagir avec l'ordinateur nous permettant de nous dispenser de clavier et de souris.
         \end{flushleft}
 
         \begin{figure}[ht]
@@ -95,15 +94,15 @@ Dans un premier temps, il faudra installer le système Raspbian. Une fois l’in
         % - cout, manipulation
         % Inconvénients :
         % - la qualité ?
-        % - configuration pas toiujours simple - fragile
+        % - configuration pas toujours simple - fragile
 
         \begin{flushleft}
             \begin{itemize}
                 \item \textbf{Intérêt :}
-                Le principal Intérêt de ce module est son coût qui est très faible. De plus tout comme le Raspberry Pi, il est très facile a manipuler. 
+                Le principal Intérêt de ce module est son coût qui est très faible. De plus tout comme le Raspberry Pi, il est très facile à manipuler. 
                 \item \textbf{Inconvénients :}
-                Cependant la qualité de ce module camèra est relativement mauvaise. et la configuration et l'utilisation est pas toujours évident.
-                De plus il est très fragile.
+                Cependant la qualité de ce module caméra est relativement mauvaise, la configuration et l’utilisation n’est pas toujours évident.
+                De plus il est relativement très fragile.
             \end{itemize}                
         \end{flushleft}
 
@@ -115,8 +114,8 @@ Dans un premier temps, il faudra installer le système Raspbian. Une fois l’in
         
     \section{Montage, Installation et Configuration}
         % du unpack au systeme fonctionnel ... Méthodo, doc , etc ...
-        Il faut savoir que le Raspberry Pi et son module caméra arrive séparément ce qui signifie que le module est pas monté sur le Raspberry Pi.
-        Le Raspberry Pi arrive sans son système pré-installé.
+        Il faut savoir que le Raspberry Pi et son module caméra arrive séparément ce qui signifie que le module n’est pas monté sur le Raspberry Pi.
+        Le Raspberry Pi arrive sans son système préinstallé.
             \subsection{Montage du matériel}
             Le Raspberry Pi possède un port CSI 'Camera Serial Interface' (signifiant en anglais interface série pour caméra, CSI) est un standard d'interface électronique entre une caméra (un capteur ou une source vidéo) et un microprocesseur.
 
@@ -128,10 +127,10 @@ Dans un premier temps, il faudra installer le système Raspbian. Une fois l’in
 
             \vspace{0.2cm}
 
-            Afin de pouvoir utiliser le module camèra il nous faut donc inseré la nappe de connecteur de la caméra dans le port CSI du Raspberry Pi.
+            Afin de pouvoir utiliser le module caméra il nous faut donc inseré la nappe de connecteur de la caméra dans le port CSI du Raspberry Pi.
             \subsection{Installation du matériel}
             % Qu'est ce que linux
-            Le système étant pas pré-installé, il nous faut installer le système d'exploitation.
+            Le système étant pas préinstallé, il nous faut installer le système d'exploitation.
             Pour ce faire nous allons utiliser Raspberry Pi Imager.
 
             \vspace{0.2cm}
@@ -149,13 +148,11 @@ Dans un premier temps, il faudra installer le système Raspbian. Une fois l’in
 
                 Une fois cela fait, on lance l'écriture, le logiciel va télécharger l'OS et installer l'OS sur la microSD.
 
-
             \begin{figure}[t]
                 \centering
                 \includegraphics[scale=0.3]{Installation_1.png} 
                 \caption{Interface "Raspberry Pi Imager"}
             \end{figure}
-
 
             \end{flushleft}
     
@@ -179,7 +176,7 @@ Dans un premier temps, il faudra installer le système Raspbian. Une fois l’in
                     \caption{camera option (raspi-config)}
                 \end{figure}
 
-                On selectionne \textbf{P1 Camera} et on met sur \textbf{Enable}.
+                On sélectionne \textbf{P1 Camera} et on met sur \textbf{Enable}.
 
                 \vspace{0.2cm}
 
@@ -187,7 +184,7 @@ Dans un premier temps, il faudra installer le système Raspbian. Une fois l’in
 
                 \vspace{0.2cm}
 
-                Pour ce faire, on ouvre le terminal et on tape la commance suivante :
+                Pour ce faire, on ouvre le terminal et on tape la commande suivante :
 
                 \begin{flushleft}
                     \begin{lstlisting}[language=bash]
@@ -238,12 +235,12 @@ Dans un premier temps, il faudra installer le système Raspbian. Une fois l’in
 
             Afin de pouvoir nous décider sur le langage de programmation, il me faut chercher la compatibilité des \underline{$API^{\ref{def:API}}$} pour la camera. 
 
-            Il s'avère que l'API PiCamera est installer par défaut sur le système d'exploitation Raspbian.
+            Il s'avère que l'API PiCamera est installée par défaut sur le système d'exploitation Raspbian.
 
             Puisque le langage Python et l'API PiCamera sont compatibles, et installer par défaut sur le système d'exploitation Raspbian, il est possible de choisir le langage Python.
         
             Même si le langage de programmation JavaScript ne figure pas dans cette liste, il est très utilisé, il est donc très intéressant de le choisir.
-            Avec electron et nodejs, nous pouvons très bien créer une application multiplatforme.\\[0.2cm]
+            Avec electron et nodejs, nous pouvons très bien créer une application multiplateforme.\\[0.2cm]
             De plus, l'API PiCamera est disponible pour le langage JavaScript.
         
             Mais par manque de temps, nodejs et electron ne sont pas installés par défaut sur le Raspberry Pi.\\[0.2cm]
@@ -315,13 +312,13 @@ Dans un premier temps, il faudra installer le système Raspbian. Une fois l’in
         \vspace{1cm}
 
         \subsection{Fonction Start Recording}
-            Afin de réaliser l'application, nous allons commencer par concevoir la fonction coeur de l'application.
+            Afin de réaliser l'application, nous allons commencer par concevoir la fonction cœur de l'application.
             C'est à dire la fonction qui va nous permettre de lancer un enregistrement et de l'arrêter.    
-            Cette fonction, son fonctionnement est érigés par la figure 4.9
+            Cette fonction, son fonctionnement est érigé par la figure 4.9
             \begin{figure}[h]
                 \centering
                 \includegraphics[scale=0.4]{diagram_activité_enregistrement.png} 
-                \caption{Diagramme d'activité de la fonction "Démarer un Enregistrement"}
+                \caption{Diagramme d'activité de la fonction "Démarrer un Enregistrement"}
             \end{figure}
 
             \begin{flushleft}
@@ -344,7 +341,7 @@ Dans un premier temps, il faudra installer le système Raspbian. Une fois l’in
 
                 \vspace{0.2cm}
                 Lors des tests, nous avons remarqué qu'arrêter l'enregistrement de manière manuelle est parfois pas très optimale.
-                Nous avons donc décider de créer une fonction nous permettant de stopper de manière automati l'enregistrement.
+                Nous avons donc décider de créer une fonction nous permettant de stopper de manière automatique l'enregistrement.
 
                 \vspace{0.2cm}
 
@@ -352,7 +349,7 @@ Dans un premier temps, il faudra installer le système Raspbian. Une fois l’in
 
                 \vspace{0.2cm}
 
-                Le temps saisie en minute de l'utilisateur sera converti en secondes.
+                Le temps saisi en minute de l'utilisateur sera converti en secondes.
 
                 De ce fait, l'API PiCamera nous permet de définir le temps d'enregistrement en secondes avec la fonction : \textbf{camera.wait\_recording(tempsEnSeconde)}.
                 
@@ -360,10 +357,9 @@ Dans un premier temps, il faudra installer le système Raspbian. Une fois l’in
 
                 Cependant cette fonction possède un défaut, elle agit comme une fonction \textbf{wait()} classique. De ce fait, durant l'enregistrement, l'utilisateur ne peut pas interagir avec l'application.
 
-                Une fois que nous n'utilison plus la caméra, nous pouvons couper toute utilisation de la caméra avec la fonction de l'API PiCamera : \textbf{camera.close()}.
+                Une fois que nous n'utilisons plus la caméra, nous pouvons couper toute utilisation de la caméra avec la fonction de l'API PiCamera : \textbf{camera.close()}.
 
             \end{flushleft}
-
 
         \subsection{Prendre une capture}
         La fonction prendre une capture est une fonction qui va nous permettre de prendre une photo.
@@ -373,7 +369,6 @@ Dans un premier temps, il faudra installer le système Raspbian. Une fois l’in
             \includegraphics[scale=0.4]{diagram_3.png} 
             \caption{Diagramme d'activité de la fonction "Prendre une capture"}
         \end{figure}
-
 
         \begin{flushleft}
             Contrairement à la fonction \textbf{Démarrer un Enregistrement}, cette fonction est plus simple dans l'ensemble de son fonctionnement.
@@ -388,12 +383,12 @@ Dans un premier temps, il faudra installer le système Raspbian. Une fois l’in
 
             \vspace{0.2cm}
     
-            Une fois cela fait, il nous faudra pré-chauffer la caméra afin de pouvoir lancer la capture d'image.
+            Une fois cela fait, il nous faudra préchauffer la caméra afin de pouvoir lancer la capture d'image.
             
             \vspace{0.2cm}
     
             Avec la fonction \textbf{sleep()}, nous allons attendre un certain délai avant de lancer la capture.
-            Pour le pré-chauffahe, 2-3 secondes suffiront.
+            Pour le préchauffage, 2-3 secondes suffiront.
 
             \vspace{0.2cm}
     
@@ -411,7 +406,7 @@ Dans un premier temps, il faudra installer le système Raspbian. Une fois l’in
 
             \vspace{0.2cm}
 
-            Pour cela, nous utilison une boucle telle que : 
+            Pour cela, nous utilisons une boucle telle que : 
             \begin{verbatim}
                 for nomDuFichier in camera.record_sequence(
                     '%d.h264' % i for i in range(1, nombreDePhoto)):
@@ -428,10 +423,10 @@ Dans un premier temps, il faudra installer le système Raspbian. Une fois l’in
         
 
         \subsection{Travail en laboratoire}
-        Tout le système que nous avons crée jusqu'à maintenant est destiné à être utilisé dans un laboratoire.
+        Tout le système que nous avons créé jusqu'à maintenant est destiné à être utilisé dans un laboratoire.
 
         \begin{flushleft}        
-            De ce fait, le module camèra sera installé sur un potence au dessus d'un bac ou sera installé divers espèce lors des expérimentations.
+            De ce fait, le module caméra sera installé sur une potence au-dessus d'un bac ou sera installé diverses espèces lors des expérimentations.
 
             \vspace{0.2cm}
 
@@ -445,17 +440,16 @@ Dans un premier temps, il faudra installer le système Raspbian. Une fois l’in
                 \caption{Le dispositif installé dans le laboratoire}
             \end{figure}
 
-            Nous pouvons voir que le Raspberry Pi est installé sur un potence dans un boitier afin de le protéger des divers éclaboussures, il en va de même pour la caméra qui se trouve en bas de la potence.
+            Nous pouvons voir que le Raspberry Pi est installé sur une potence dans un boitier afin de le protéger des diverses éclaboussures, il en va de même pour la caméra qui se trouve en bas de la potence.
 
             \vspace{0.2cm}
 
-            Plus à gauche, nous pouvons voir l'écran tactile qui ne prend pas énormement de place, et qui est relativement amovible.
+            Plus à gauche, nous pouvons voir l'écran tactile qui ne prend pas énormément de place, et qui est relativement amovible.
 
             \vspace{0.2cm}
-
 
     
-            J'ai également eu l'occasion de partir à la recherche de Gérridés dans la Mangrove de la Guadeloupe et d'en attraper a l'épuisette (voir Figure 4.12).
+            J'ai également eu l'occasion de partir à la recherche de Gérridés dans la Mangrove de la Guadeloupe et d'en attraper à l'épuisette (voir Figure 4.12).
 
             \begin{figure}[ht]
                 \centering
@@ -466,25 +460,25 @@ Dans un premier temps, il faudra installer le système Raspbian. Une fois l’in
         \end{flushleft}
 
         \subsection{Travail sur la caméra}
-        Le module camèra est très certainement celle qui nous à posé le plus de problème.
+        Le module caméra est très certainement celle qui nous a posé le plus de problème.
 
         \begin{flushleft}
-            Pendant une grande partie des expérimentations, nous avons eu divers problème lors des enregistrements.
+            Pendant une grande partie des expérimentations, nous avons eu divers problèmes lors des enregistrements.
 
             \vspace{0.2cm}
     
-            Commencent par des problèmes de stockage de la vidéo, pour nos éxpérimentations, nous devosn réaliser des enregistrement d'une vingtaine de minutes.
+            Commencent par des problèmes de stockage de la vidéo, pour nos expérimentations, nous devons réaliser des enregistrements d'une vingtaine de minutes.
             Pour une vidéo de 20 minutes, nous avions besoin de plus de 4Go de mémoire.
             Cela était trop grand pour le stockage de la vidéo sur le Raspberry Pi.
     
             \vspace{0.2cm}
     
-            Nous avons également eux des soucis d'éclairage, qui provoquait des effets d'anneaux sur la vidéo, cela à plus ou moins été régler en modifiant le \underline{bitrate} de l'enregistrement ainsi qu'en métant le dispositif projet dans un endroit où il n'y a pas d'éclairage.
-            L'utilisateur peut également modifier le contrast et la luminosité de la vidéo afin d'avoir un meilleur rendu.
+            Nous avons également eux des soucis d'éclairage, qui provoquait des effets d'anneaux sur la vidéo, cela à plus ou moins été régler en modifiant le \underline{bitrate} de l'enregistrement ainsi qu'en mettant le dispositif projet dans un endroit où il n'y a pas d'éclairage.
+            L'utilisateur peut également modifier le contraste et la luminosité de la vidéo afin d'avoir un meilleur rendu.
     
             \vspace{0.2cm}
     
-            Nous avons rencontré également deux autres problèmes qui sont notament les effets de zoom lors de nos enregistrement qui étaient du à une trop forte résolution de la caméra ainsi qu'un problème de saut d'image dans nos enregistrement. Cela étant du au format de la vidéo, lors de la conversion vidéo en format mp4, ce soucis n'apparaisait plus.
+            Nous avons rencontré également deux autres problèmes qui sont notamment les effets de zoom lors de nos enregistrements qui étaient dus à une trop forte résolution de la caméra ainsi qu'un problème de saut d'image dans nos enregistrements. Cela étant dû au format de la vidéo, lors de la conversion vidéo en format mp4, ce souci n'apparaissait plus.
     
             \vspace{0.2cm}
     
@@ -492,7 +486,7 @@ Dans un premier temps, il faudra installer le système Raspbian. Une fois l’in
     
             \subsection{Travail sur vidéo}
             % Ajout de la partie mise au point de la vidéo
-            Après avoir utilisé notre dispositif lors des expérimentations, les biologistres on besoin de résultat et pour ce faire nous devons extraire un certain nombre d'image des vidéos.
+            Après avoir utilisé notre dispositif lors des expérimentations, les biologistes ont besoin de résultat et pour ce faire nous devons extraire un certain nombre d'image des vidéos.
     
             \vspace{0.2cm}
 
@@ -502,12 +496,12 @@ Dans un premier temps, il faudra installer le système Raspbian. Une fois l’in
                 ffmpeg -i Nom_Vid.h264 -r .6 -q:v 1  ./Nom_Vid_%6d.jpg
             \end{verbatim}
 
-            Nous remarquons que cela n'est pas simple d'utiliser cette commande, de ce fait nous avons créer une fonction permettant à l'utilisateur de choisir une vidéo ainsi que le dossier ou il souhaite enregistrées les images extraites.
+            Nous remarquons que cela n'est pas simple d'utiliser cette commande, de ce fait nous avons créé une fonction permettant à l'utilisateur de choisir une vidéo ainsi que le dossier où il souhaite enregistrées les images extraites.
 
             \vspace{0.2cm}
 
             Une fois que nous avons nos images, nous pouvons les annoter avec un logiciel en ligne : \textbf{www.robots.ox.ac.uk}.
-            Mais le gros problème, c'est qu'il nous faut annoter les images de façon manuelle et une par une, et afin d'avoir des résultats précis il nous faut travailler avec d'énorme quantité d'image, pour un idividus annoter environs 900 images n'est pas choses facile.
+            Mais le gros problème, c'est qu'il nous faut annoter les images de façon manuelle et une par une, et afin d'avoir des résultats précis il nous faut travailler avec d'énorme quantité d'image, pour un individu annoter environs 900 images n'est pas chose facile.
 
             \vspace{0.2cm}
 
