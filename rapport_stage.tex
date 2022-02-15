@@ -6,7 +6,7 @@
 % \usepackage[latin1]{inputenc} % ISO 8859-1
 \usepackage{lmodern} % modern fonts
 \usepackage[babel=true]{csquotes} % French quotes
-\usepackage{minitoc} % Table of contents
+% \usepackage{minitoc} % Table of contents
 \usepackage{geometry} % Page size
 \usepackage{ragged2e} % Ragged right
 \usepackage{fancyhdr} % Header
@@ -15,9 +15,9 @@
 \usepackage{listings} % Code
 \usepackage{amsthm}
 \usepackage{tabularx}
-% \usepackage{minted}
 % \usepackage{hyperref}
-
+\usepackage[hidelinks]{hyperref}
+% \usepackage{minted}
 
 \newtheorem{definition}{Définition}
 
@@ -32,7 +32,7 @@
 
 \setcounter{secnumdepth}{3} % Section number depth
 \setcounter{tocdepth}{1} % Table of contents depth
-\setcounter{minitocdepth}{3} % Table of contents depth
+% \setcounter{minitocdepth}{3} % Table of contents depth
 
 \begin{document}
 
@@ -75,5 +75,9 @@
 % Définition             ===============================
 \include{./src/tex/definition.tex}
 % Définition             ===============================
+
+% bibliography            ===============================
+\include{./src/tex/bibliography.tex}
+% bibliography            ===============================
 
 \end{document}

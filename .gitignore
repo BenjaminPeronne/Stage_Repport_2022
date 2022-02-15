@@ -163,3 +163,7 @@ rapport_stage 20.fls
 src/tex/.DS_Store
 .rapport_stage 2.synctex.gz.icloud
 src/tex/abstract.aux
+rapport_stage.bcf
+.rapport_stage.synctex(1).gz.icloud
+rapport_stage.run.xml
+src/tex/bibliography.aux
