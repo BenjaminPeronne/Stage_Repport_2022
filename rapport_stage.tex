@@ -6,7 +6,7 @@
 % \usepackage[latin1]{inputenc} % ISO 8859-1
 \usepackage{lmodern} % modern fonts
 \usepackage[babel=true]{csquotes} % French quotes
-% \usepackage{minitoc} % Table of contents
+\usepackage{minitoc} % Table of contents
 \usepackage{geometry} % Page size
 \usepackage{ragged2e} % Ragged right
 \usepackage{fancyhdr} % Header
@@ -25,7 +25,6 @@
 \graphicspath{ {./src/images/} }
 
 \justifying
-
 \setlength{\headheight}{0.5cm}
 \setlength{\headsep}{0.5cm}
 
@@ -35,7 +34,7 @@
 
 \setcounter{secnumdepth}{3} % Section number depth
 \setcounter{tocdepth}{1} % Table of contents depth
-% \setcounter{minitocdepth}{3} % Table of contents depth
+\setcounter{minitocdepth}{3} % Table of contents depth
 
 \begin{document}
 
@@ -44,10 +43,10 @@
 % Intro             ===============================
 
 % White Sheet        ===============================
-\newpage
-\thispagestyle{empty}
-\mbox{}
-\newpage
+% \newpage
+% \thispagestyle{empty}
+% \mbox{}
+% \newpage
 % White Sheet        ===============================
 
 % Remerciments             ===============================
@@ -58,7 +57,7 @@
 \include{./src/tex/abstract.tex}
 % Résumé             ===============================
 
-% \dominitoc
+\dominitoc
 \tableofcontents
 
 

@@ -1,4 +1,6 @@
 \chapter{Travail réalisé}
+\minitoc % Table of contents
+    \label{Chapitre 4}
     Avant de commencer nous allons introduire le travail à réaliser. Dans un premier temps, nous allons présenter les différents matériels utilisés afin de concevoir le dispositif de prise de vue. Par la suite, le déroulement du montage, ainsi que de l'installation et la configuration du dispositif. Une fois cela fait, nous allons réaliser l'application permettant l'interaction entre le dispositif et l'utilisateur afin de pouvoir effectuer la prise de vue.
     
     \section{Mon travail}
@@ -39,14 +41,14 @@
                 \end{tabular}            
             \end{center}
 
-            Le Raspberry Pi est également simple à manipuler. Néamoins il possède certains Inconvénients.
+            Le Raspberry Pi est également simple à manipuler. Néamoins il possède certains inconvénients.
 
             \begin{center}
                 \begin{itemize}
                     \item \textbf{Inconvénients :}
                     En vue de sa petite taille, il est très fragile mais également très peu performant.
                     Sa configuration n'est pas toujours simple à réaliser.
-                    Nous pouvons toujours augmenter les performances du Raspberry Pi via à de l'\underline{$ Overclocking^{\ref{def:Overclocking}}$} mais il faudrait un système de refroidissement pour le Raspberry Pi.
+                    Nous pouvons toujours augmenter les performances du Raspberry Pi via à de l'\underline{$ Overclocking^{\ref{def:Overclocking}}$} mais il faudrait prévoir un système de refroidissement.
                 \end{itemize}
             \end{center}
 
@@ -61,11 +63,11 @@
         
  
         \subsection{Ecran LCD (Raspberry Pi)}
-        Avec le \textit{Raspberry Pi} un écran LCD de 7 pouces permettant d'interagir avec l'ordinateur grâce à son écran tactile. 
+        Un écran LCD de 7 pouces est branché sur le Raspberry Pi et permet d'intéragir avec l'ordinateur.
 
         \vspace{0.2cm}
 
-        L'Intérêt majeur de ce type de périphérique c'est sa finesse.
+        L'intérêt majeur de ce type de périphérique est sa finesse.
         En effet, dans un laboratoire il n’est pas toujours facile d'avoir un grand écran.
         De ce fait avoir un écran de petite taille qu'on peut tenir dans nos mains tout en ayant la possibilité d'utiliser l'écran tactile pour interagir avec l'ordinateur nous permettant de nous dispenser de clavier et de souris.
 
@@ -89,10 +91,10 @@
         \begin{flushleft}
             \begin{itemize}
                 \item \textbf{Intérêt :}
-                Le principal Intérêt de ce module est son coût qui est très faible. De plus tout comme le Raspberry Pi, il est très facile à manipuler. 
+                Le principal intérêt de ce module est son coût qui est très faible. De plus tout comme le Raspberry Pi, il est très facile à manipuler. 
                 \item \textbf{Inconvénients :}
-                Cependant la qualité de ce module caméra est relativement mauvaise, la configuration et l’utilisation n’est pas toujours évident.
-                De plus il est relativement très fragile.
+                la qualité de ce module caméra est relativement mauvaise, sa configuration et son utilisation ne sont pas toujours évidentes.
+                De plus il est relativement fragile.
             \end{itemize}                
         \end{flushleft}
 
@@ -105,7 +107,7 @@
     \section{Montage, Installation et Configuration}
         % du unpack au systeme fonctionnel ... Méthodo, doc , etc ...
         Il faut savoir que le Raspberry Pi et son module caméra arrive séparément ce qui signifie que le module n’est pas monté sur le Raspberry Pi.
-        Le Raspberry Pi arrive sans son système préinstallé.
+        Le Raspberry Pi arrive sans son système d'exploitation préinstallé.
             \subsection{Montage du matériel}
             Le Raspberry Pi possède un port CSI 'Camera Serial Interface' (signifiant en anglais interface série pour caméra, CSI) est un standard d'interface électronique entre une caméra (un capteur ou une source vidéo) et un microprocesseur.
 
@@ -115,19 +117,16 @@
                 \caption{Matériel assemblé et prêt à l'emploi}
             \end{figure}
 
-            \vspace{0.2cm}
-
-            Afin de pouvoir utiliser le module caméra il nous faut donc inseré la nappe de connecteur de la caméra dans le port CSI du Raspberry Pi.
+            Afin de pouvoir utiliser le module caméra il nous faut donc insérer la nappe de connecteur de la caméra dans le port CSI du Raspberry Pi.
             \subsection{Installation du matériel}
             % Qu'est ce que linux
-            Le système étant pas préinstallé, il nous faut installer le système d'exploitation.
-            Pour ce faire nous allons utiliser Raspberry Pi Imager.
-
+            Il nous faut installer le système d'exploitation (\underline{$OS^{\ref{def:OS}}$}). Pour ce faire nous allons utiliser Raspberry Pi Imager, logiciel développé par Raspberry Pi Foundation nous permettant de télécharger et installer l'OS \underline{Raspbian}. Raspbian est l'\underline{OS} original ainsi que le plus connu, libre et gratuit basé sur Debian, il est optimisé pour fonctionner sur les différents Raspberry Pi.
+            
             \vspace{0.2cm}
 
-            
-            Raspberry Pi Imager est le moyen rapide et facile d'installer Raspberry Pi \underline{$OS^{\ref{def:OS}}$} sur une microSD.
-            Il nous faut télécharger le fichier d'installation sur le site web Raspberry.com et de l'installer.
+            Raspberry Pi Imager est le moyen rapide et facile d’installer Raspberry Pi \underline{OS} (Raspbian) sur une microSD. 
+
+            % Il nous faut télécharger le fichier d'installation sur le site web Raspberry.com et de l'installer.
 
             \begin{figure}[ht]
                 \centering
@@ -141,7 +140,7 @@
 
             \vspace{0.2cm}
 
-            Une fois cela fait, on lance l'écriture, le logiciel va télécharger l'OS et installer l'OS sur la microSD.
+            Une fois cela fait, on lance l'écriture, le logiciel va télécharger l'\underline{OS} et l'installer sur la microSD.
 
     
             \subsection{Configuration du matériel}
@@ -180,13 +179,9 @@
                     \end{lstlisting}
                 \end{flushleft}
 
-                Cette commande nous permet de prendre une photo et de la sauvegarder dans le dossier Desktop.
-
-                \vspace{0.2cm}
-
-                La photo est bien prise. De ce fait la caméra est opérationnelle.
-
-                Nous pouvons tout de même essayer de faire une vidéo.
+                Cette commande nous permet de prendre une photo et de la sauvegarder dans le dossier Desktop. Si photo est bien prise on peut en deduire que la caméra est opérationnelle. 
+                
+                L'opération suivant consiste à essayer de faire une vidéo.
 
                 \begin{flushleft}
                     \begin{lstlisting}[language=bash]
@@ -194,19 +189,13 @@
                     \end{lstlisting}
                 \end{flushleft}
 
-                Cette commande nous permet de prendre une vidéo et de la sauvegarder dans le dossier Desktop.
-
-                \vspace{0.2cm}
-
-                La vidéo est bien prise. Donc tout est fonctionnel.
+                Cette commande nous permet de prendre une vidéo et de la sauvegarder dans le dossier Desktop, la vidéo est bien prise.
+                %  Donc tout est fonctionnel.
                 
             \end{flushleft}
 
     \section{Choix des technologies}
-        Pour le choix du langage de programmation, On s'est basé sur les langages de programmation les plus classés pour le (Raspberry Pi) système d'exploitation Raspbian.
-        Lors de ma recherche 5 langages de programmation en sont sortis : 
-
-        \vspace{0.2cm}
+        Pour le choix du langage de programmation, Nous nous sommes basé sur les langages de programmation les plus utilisés avec le système d'exploitation \underline{Raspbian}. Lors de ma recherche, 5 langages de programmation sont sortis : 
 
         \begin{itemize}
             \item Python
@@ -216,18 +205,18 @@
             \item Scratch
         \end{itemize}
 
-        On peut voir que le langage Python est le plus utilisé pour le (Raspberry Pi) système d'exploitation Raspbian. Ce qui est normal, car le Pi dans "Raspberry Pi" signifie "Python". Il a donc le mérite d'être le choix par défaut.
+        Nous constatons que le langage Python est le plus utilisé pour le système d'exploitation Raspbian. Ce qui est normal, car le Pi dans "Raspberry Pi" signifie "Python". Il a donc le mérite d'être le choix par défaut.
 
         \vspace{0.2cm}
 
-        Afin de pouvoir nous décider sur le langage de programmation, il me faut chercher la compatibilité des \underline{$API^{\ref{def:API}}$} pour la camera. Il s'avère que l'API PiCamera est installée par défaut sur le système d'exploitation Raspbian. Puisque le langage Python et l'API PiCamera sont compatibles, et installer par défaut sur le système d'exploitation Raspbian, il est possible de choisir le langage Python.
+        Afin de pouvoir nous décider sur le langage de programmation, il me faut chercher la compatibilité des \underline{$API^{\ref{def:API}}$} pour la camera. Il s'avère que l'API PiCamera est installée par défaut sur le système d'exploitation Raspbian. Puisque le langage Python et l'API PiCamera sont compatibles, et installé par défaut sur le système d'exploitation Raspbian, il est possible de choisir le langage Python.
 
         \vspace{0.2cm}
     
         Même si le langage de programmation JavaScript ne figure pas dans cette liste, il est très utilisé, il est donc très intéressant de le choisir.
-        Avec electron et nodejs, nous pouvons très bien créer une application multiplateforme. De plus, l'API PiCamera est disponible pour le langage JavaScript.
-    
-        Mais par manque de temps, nodejs et electron ne sont pas installés par défaut sur le Raspberry Pi. De ce fait nous allons utiliser le langage Python pour la programmation du logiciel.
+        Avec electron et nodejs, nous pouvons très bien créer une application multiplateforme. De plus, l'API PiCamera est disponible pour le langage JavaScript.    
+
+        NodeJs et Electron ne sont pas installés par défaut sur le Raspberry Pi, donc cela nous prendra plus de temps afin de réaliser les phases d'installation et de configuration de l'environnement de travail, et plus d'incertitudes qu'avec le langage Python. En vu du délais court, nous allons choisir le langage Python.
 
         \vspace{0.2cm}
         
@@ -244,17 +233,18 @@
         Avant toutes choses, nous allons importer les modules nécessaires.
         Nous allons utiliser les modules :
         \begin{itemize}
-            \item \textbf{picamera}
-            \item \textbf{tkinter}
-            \item \textbf{datetime}
-            \item \textbf{os}
-            \item \textbf{time}
+            \item \textbf{picamera :} \textit{Module de la caméra}
+            \item \textbf{tkinter :} \textit{Module de l'interface graphique}
+            \item \textbf{datetime :} \textit{Module de gestion de la date et de l'heure}
+            \item \textbf{os :} \textit{Module de gestion de l'OS}
+            \item \textbf{time :} \textit{Module de gestion du temps}
         \end{itemize}
 
+        \vspace{0.2cm}
         
-        Maintenant que nos modules sont importés, nous allons créer une maquette du menu principal de l'application.
+        Nous allons créer une maquette du menu principal de l'application.
         Cette maquette nous permettra d'avoir un aperçu de l'application.
-        Et nous permettra de concevoir le \underline{$GUI^{\ref{def:GUI}}$} de l'application à l'aide de Tkinter.            
+        Et nous permettra de concevoir l'interface graphique (\underline{$GUI^{\ref{def:GUI}}$}) de l'application à l'aide de Tkinter.            
 
         \subsection{Création de l'interface graphique}
             \begin{figure}[ht]
@@ -289,7 +279,7 @@
         \subsection{Fonction Start Recording}
             Afin de réaliser l'application, nous allons commencer par concevoir la fonction cœur de l'application.
             C'est à dire la fonction qui va nous permettre de lancer un enregistrement et de l'arrêter.    
-            Cette fonction, son fonctionnement est érigé par la figure 4.9
+            Cette fonction, son fonctionnement est représenté par la figure 4.9
 
             \begin{figure}[ht]
                 \centering
@@ -299,37 +289,37 @@
 
             % \newpage
             
-            D'après notre diagramme d'activité, il nous faut commencer l'enregistrement lorsque l'utilisateur clique sur le bouton "Start".Avant de pouvoir démarrer un enregistrement, il faut initialiser la caméra, pour cela, la documentation nous indique une fonction pour cela qui est : \textbf{camera = PiCamera()}. Une fois la caméra initialisée, nous pouvons commencer à traiter la demande de l'utilisateur.
+            D'après notre diagramme d'activité, il nous faut commencer l'enregistrement lorsque l'utilisateur clique sur le bouton "Start". Avant de pouvoir démarrer un enregistrement, il faut initialiser la caméra, pour cela, la documentation nous indique une fonction qui est : \textbf{camera = PiCamera()}. Une fois la caméra initialisée, nous pouvons commencer à traiter la demande de l'utilisateur.
 
             \vspace{0.2cm}
             
-            \textbf{AskForSaveFile} est une fonction de tkinter qui va nous permettre de demander à l'utilisateur de saisir un nom de fichier et de lui permettre de choisir l'emplacement de sauvegarde. Une fois que l'utilisateur a saisi le nom de fichier, nous pouvons commencer à enregistrer avec la fonction de l'API PiCamera : \textbf{camera.start\_recording(nomDuFichier, format)}.
+            \textbf{AskForSaveFile} est une fonction de \textbf{tkinter} qui nous permets de demander à l'utilisateur de saisir un nom de fichier et de lui permettre de choisir l'emplacement de sauvegarde. Une fois que l'utilisateur a saisi le nom de fichier, nous pouvons commencer à enregistrer avec la fonction de l'API PiCamera : \textbf{camera.start\_recording(nomDuFichier, format)}.
             L'enregistrement restera actif tant que l'utilisateur ne clique pas sur le bouton "Stop".
             L'arrêt de l'enregistrement se fait avec la fonction de l'API PiCamera : \textbf{camera.stop\_recording()}.
 
             \vspace{0.2cm}
 
-            Lors des tests, nous avons remarqué qu'arrêter l'enregistrement de manière manuelle est parfois pas très optimale.
-            Nous avons donc décider de créer une fonction nous permettant de stopper de manière automatique l'enregistrement. Il s'agit de permettre à l'utilisateur de saisir un temps en minutes et de lancer l'enregistrement. Le temps saisi en minute de l'utilisateur sera converti en secondes.
-
-            \vspace{0.2cm}
-
-            De ce fait, l'API PiCamera nous permet de définir le temps d'enregistrement en secondes avec la fonction : \textbf{camera.wait\_recording(tempsEnSeconde)}. Cependant cette fonction possède un défaut, elle agit comme une fonction \textbf{wait()} classique. De ce fait, durant l'enregistrement, l'utilisateur ne peut pas interagir avec l'application. 
+            Lors des tests, nous avons remarqué qu'arrêter l'enregistrement de manière manuelle n'est parfois pas très optimale. Dans notre cas, une expérience est d'une durée minimum de 20 minutes, l'utilisateur doit donc rester attentif afin d'arrêter l'enregistrement. Il se peut que l'utilisateur oublie l'enregistrement en cours. 
             
+            Nous avons donc décidé de créer une fonction nous permettant de stopper de manière automatique l'enregistrement. Il s'agit de permettre à l'utilisateur de saisir un temps en minutes et de lancer l'enregistrement. Le temps saisi en minute de l'utilisateur sera converti en secondes.
+
             \vspace{0.2cm}
+
+            De ce fait, l'API PiCamera nous permet de définir le temps d'enregistrement en secondes avec la fonction : \textbf{camera.wait\_recording(tempsEnSeconde)}. Cependant cette fonction possède un défaut, elle agit comme une fonction \textbf{wait()} classique. Par conséquent, durant l'enregistrement, l'utilisateur ne peut pas interagir avec l'application. 
+            
+            \vspace{0.4cm}
 
             Une fois que nous n'utilisons plus la caméra, nous pouvons couper toute utilisation de la caméra avec la fonction de l'API PiCamera : \textbf{camera.close()}.
             
         \subsection{Prendre une capture}
         La fonction prendre une capture est une fonction qui va nous permettre de prendre une photo.
-        Cette fonction est érigée par la figure 4.10.
+        Cette fonction est représenté par la figure 4.10.
         \begin{figure}[ht]
             \centering
             \includegraphics[scale=0.4]{diagram_3.png} 
             \caption{Diagramme d'activité de la fonction "Prendre une capture"}
         \end{figure}
 
-        
         Contrairement à la fonction \textbf{Démarrer un Enregistrement}, cette fonction est plus simple dans l'ensemble de son fonctionnement. 
         
         \vspace{0.2cm}
@@ -356,14 +346,14 @@
             \end{verbatim}            
         \end{flushleft}
 
-        Tant que le nombre de photos voulue n'est pas atteint, nous allons continuer à prendre des photos toutes les 6 secondes. Nous avons mis un délai de 6 secondes entre chaque photo afin que la prise ne soit pas exactement identique à la précédente.
+        Tant que le nombre de photos voulues n'est pas atteint, nous allons continuer à prendre des photos toutes les 6 secondes. Nous avons mis un délai de 6 secondes entre chaque photo afin que la prise ne soit pas exactement identique à la précédente.
     
         \subsection{Travail en laboratoire}
         Tout le système que nous avons créé jusqu'à maintenant est destiné à être utilisé dans un laboratoire. De ce fait, le module caméra sera installé sur une potence au-dessus d'un bac ou sera installé diverses espèces lors des expérimentations. Cette installation suit la figure 4.11.
 
         \begin{figure}[ht]
             \centering
-            \includegraphics[scale=0.06]{setup.jpeg} 
+            \includegraphics[scale=0.055]{setup.jpeg} 
             \caption{Le dispositif installé dans le laboratoire}
         \end{figure} 
 
@@ -371,41 +361,45 @@
 
         \vspace{0.2cm}
 
-        Nous avons également eu l'occasion de partir à la recherche de Gérridés dans la Mangrove de la Guadeloupe et d'en attraper à l'épuisette (voir Figure 4.12).
+        Les \textbf{Gerridés} utilisés pour les expériences sont directement attrapé à l'épuisette dans la Mangrove. Nous avons eu l'occasion de partir à la recherche de ces \textbf{Gerridés} dans la Mangrove de la Guadeloupe (voir Figure 4.12).
 
         \begin{figure}[ht]
             \centering
-            \includegraphics[scale=0.08]{mangrove.jpeg}
+            \includegraphics[scale=0.075]{mangrove.jpeg}
             \caption{Mangrove de la Guadeloupe}
         \end{figure}
-            
-        
 
+        \vspace{3.5cm}
+             
         \subsection{Travail sur la caméra}
-        Le module caméra est très certainement celle qui nous a posé le plus de problème. Pendant une grande partie des expérimentations, nous avons eu divers problèmes lors des enregistrements.
+        Le module caméra est très certainement celui qui nous a posé le plus de problème. Pendant une grande partie des expérimentations, nous avons eu divers problèmes lors des enregistrements.
 
         \vspace{0.2cm}
 
-        Commencent par des problèmes de stockage de la vidéo, pour nos expérimentations, nous devons réaliser des enregistrements d'une vingtaine de minutes.
-        Pour une vidéo de 20 minutes, nous avions besoin de plus de 4Go de mémoire.
+        Commençons par des problèmes de stockage de la vidéo. Pour nos expérimentations, nous devons réaliser des enregistrements d'une vingtaine de minutes.
+        Cela représentait plus de 4Go de mémoire.
         Cela était trop grand pour le stockage de la vidéo sur le Raspberry Pi.
 
         \vspace{0.2cm}
 
-        Nous avons également eux des soucis d'éclairage, qui provoquait des effets d'anneaux sur la vidéo, cela à plus ou moins été régler en modifiant le \underline{bitrate} de l'enregistrement ainsi qu'en mettant le dispositif projet dans un endroit où il n'y a pas d'éclairage.
+        Nous avons également eu des soucis d'éclairage, qui provoquaient des effets d'anneaux sur la vidéo, cela a plus ou moins été réglé en modifiant le nombre de données traités par unité de temps (\underline{bitrate}) de l'enregistrement, ainsi qu'en mettant le dispositif dans un endroit sans éclairage.
         L'utilisateur peut également modifier le contraste et la luminosité de la vidéo afin d'avoir un meilleur rendu.
 
         \vspace{0.2cm}
 
-        Nous avons rencontré également deux autres problèmes qui sont notamment les effets de zoom lors de nos enregistrements qui étaient dus à une trop forte résolution de la caméra ainsi qu'un problème de saut d'image dans nos enregistrements. Cela étant dû au format de la vidéo, lors de la conversion vidéo en format mp4, ce souci n'apparaissait plus.
+        % Nous avons rencontré également deux autres problèmes qui sont notamment les effets de zoom lors de nos enregistrements qui étaient dus à une trop forte résolution de la caméra ainsi qu'un problème de saut d'image dans nos enregistrements. Cela étant dû au format de la vidéo, lors de la conversion vidéo en format mp4, ce souci n'apparaissait plus.
 
-        \vspace{0.2cm}
-
-        Cela laisse à supposer que l'écriture au format H264 n'était pas adapté pour la configuration de notre Raspberry Pi.
+        Nous avons également rencontré deux autres problèmes, le premier concernent les effets de zoom lors de nos enregistrements qui étaient dus à une trop forte résolution de la caméra. Le deuxième était un problème de saut d'image dus à un souci au niveau du format de la vidéo.
+        Lors de conversion de la vidéo en format mp4, ce dernier problème a été résolu.
+        Cela laisse à supposer que l'écriture au format \underline{$H264^{\ref{def:H}}$} n'était pas adapté pour la configuration de notre Raspberry Pi.
 
         \subsection{Travail sur vidéo}
         % Ajout de la partie mise au point de la vidéo
-        Après avoir utilisé notre dispositif lors des expérimentations, les biologistes ont besoin de résultat et pour ce faire nous devons extraire un certain nombre d'image des vidéos.
+        Après avoir utilisé notre dispositif lors des expérimentations, les biologistes ont besoin de résultats et pour ce faire nous devons extraire un certain nombre d'images des vidéos, avec le  \underline{$framework^{\ref{def:framework}}$} \textbf{$FFmpeg$}.
+
+        \vspace{0.2cm}
+
+        FFmpeg est un projet de logiciel libre qui produit des bibliothèques et des programmes pour gérer et manipuler des données multimédias. FFmpeg peut gérer l'ensemble du processus de transcodage, de manipulation de vidéos et d'images (redimensionnement, débruitage, etc.), de conditionnement, de diffusion en continu et de lecture. Il s'agit du logiciel de traitement de vidéo et d'image le plus populaire et est utilisé par de nombreuses entreprises dans divers secteurs.
 
         \begin{flushleft}
             Pour ce faire, nous utilisons une commande de ffmpeg :
@@ -417,12 +411,12 @@
 
         \end{flushleft}
 
-        Nous remarquons que cela n'est pas simple d'utiliser cette commande, de ce fait nous avons créé une fonction permettant à l'utilisateur de choisir une vidéo ainsi que le dossier où il souhaite enregistrées les images extraites. 
+        Nous remarquons que cela n'est pas simple d'utiliser cette commande, c'est pourquoi nous avons créé une fonction permettant à l'utilisateur de choisir une vidéo ainsi que le dossier où il souhaite enregistrer les images extraites. 
         
         \vspace{0.2cm}
 
         Une fois que nous avons nos images, nous pouvons les annoter avec un logiciel en ligne : \textbf{www.robots.ox.ac.uk}.
-        Mais le gros problème, c'est qu'il nous faut annoter les images de façon manuelle et une par une, et afin d'avoir des résultats précis il nous faut travailler avec d'énorme quantité d'image, pour un individu annoter environs 900 images n'est pas chose facile.
+        Mais le gros problème, c'est qu'il nous faut annoter les images de façon manuelle et une par une, et afin d'avoir des résultats précis, il nous faut travailler avec d'énorme quantité d'image dnas le but d'entrainer un système d'apprentissage automatique, pour un individu annoter environs 900 images n'est pas chose facile.
 
         \vspace{0.2cm}
 
