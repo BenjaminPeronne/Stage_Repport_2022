@@ -19,6 +19,9 @@
 \usepackage[hidelinks]{hyperref}
 % \usepackage{minted}
 % \usepackage{glossaries}
+\usepackage{titlesec, blindtext, color}
+\definecolor{gray75}{gray}{0.75}
+\newcommand{\hsp}{\hspace{20pt}}
 
 \newtheorem{definition}{Définition}
 
@@ -35,6 +38,8 @@
 \setcounter{secnumdepth}{3} % Section number depth
 \setcounter{tocdepth}{1} % Table of contents depth
 \setcounter{minitocdepth}{3} % Table of contents depth
+
+\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
 
 \begin{document}
 
