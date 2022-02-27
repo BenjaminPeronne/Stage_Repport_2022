@@ -283,7 +283,7 @@
 
             \begin{figure}[ht]
                 \centering
-                \includegraphics[scale=0.4]{diagram_activité_enregistrement.png} 
+                \includegraphics[scale=0.35]{diagram_activité_enregistrement.png} 
                 \caption{Diagramme d'activité de la fonction "Démarrer un Enregistrement"}
             \end{figure}
 
@@ -320,11 +320,7 @@
             \caption{Diagramme d'activité de la fonction "Prendre une capture"}
         \end{figure}
 
-        Contrairement à la fonction \textbf{Démarrer un Enregistrement}, cette fonction est plus simple dans l'ensemble de son fonctionnement. 
-        
-        \vspace{0.2cm}
-
-        Tout d'abord, comme nous l'avons vu pour la fonction \textbf{Démarrer un Enregistrement}, nous allons initialiser la caméra. Une fois celle-ci initialisée, nous allons demander à l'utilisateur de saisir un nom de fichier et l'emplacement de sauvegarde. Une fois cela fait, il nous faudra préchauffer la caméra afin de pouvoir lancer la capture d'image. Avec la fonction \textbf{sleep()}, nous allons attendre un certain délai avant de lancer la capture.
+        Contrairement à la fonction \textbf{Démarrer un Enregistrement}, cette fonction est plus simple dans l'ensemble de son fonctionnement. Tout d'abord, comme nous l'avons vu pour la fonction \textbf{Démarrer un Enregistrement}, nous allons initialiser la caméra. Une fois celle-ci initialisée, nous allons demander à l'utilisateur de saisir un nom de fichier et l'emplacement de sauvegarde. Une fois cela fait, il nous faudra préchauffer la caméra afin de pouvoir lancer la capture d'image. Avec la fonction \textbf{sleep()}, nous allons attendre un certain délai avant de lancer la capture.
         Pour le préchauffage, 2-3 secondes suffiront.
 
         \vspace{0.2cm}
@@ -337,6 +333,8 @@
         Afin de pouvoir faire cela, nous allons demander à l'utilisateur de saisir un nom de fichier et l'emplacement de sauvegarde comme précédemment.
         Mais avant cela, nous demandons à l'utilisateur de choisir le nombre de photos à prendre.
 
+        \vspace{0.5cm}
+
         \begin{flushleft}
             Pour cela, nous utilisons une boucle telle que : 
             \begin{verbatim}
@@ -346,6 +344,8 @@
             \end{verbatim}            
         \end{flushleft}
 
+        \vspace{0.7cm}
+
         Tant que le nombre de photos voulues n'est pas atteint, nous allons continuer à prendre des photos toutes les 6 secondes. Nous avons mis un délai de 6 secondes entre chaque photo afin que la prise ne soit pas exactement identique à la précédente.
     
         \subsection{Travail en laboratoire}
@@ -353,7 +353,7 @@
 
         \begin{figure}[ht]
             \centering
-            \includegraphics[scale=0.055]{setup.jpeg} 
+            \includegraphics[scale=0.050]{setup.jpeg} 
             \caption{Le dispositif installé dans le laboratoire}
         \end{figure} 
 
