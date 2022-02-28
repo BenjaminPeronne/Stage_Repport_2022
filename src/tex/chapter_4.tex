@@ -291,7 +291,7 @@
             
             D'après notre diagramme d'activité, il nous faut commencer l'enregistrement lorsque l'utilisateur clique sur le bouton "Start". Avant de pouvoir démarrer un enregistrement, il faut initialiser la caméra, pour cela, la documentation nous indique une fonction qui est : \textbf{camera = PiCamera()}. Une fois la caméra initialisée, nous pouvons commencer à traiter la demande de l'utilisateur.
 
-            \vspace{0.2cm}
+            \vspace{0.7cm}
             
             \textbf{AskForSaveFile} est une fonction de \textbf{tkinter} qui nous permets de demander à l'utilisateur de saisir un nom de fichier et de lui permettre de choisir l'emplacement de sauvegarde. Une fois que l'utilisateur a saisi le nom de fichier, nous pouvons commencer à enregistrer avec la fonction de l'API PiCamera : \textbf{camera.start\_recording(nomDuFichier, format)}.
             L'enregistrement restera actif tant que l'utilisateur ne clique pas sur le bouton "Stop".
@@ -299,17 +299,11 @@
 
             \vspace{0.2cm}
 
-            Lors des tests, nous avons remarqué qu'arrêter l'enregistrement de manière manuelle n'est parfois pas très optimale. Dans notre cas, une expérience est d'une durée minimum de 20 minutes, l'utilisateur doit donc rester attentif afin d'arrêter l'enregistrement. Il se peut que l'utilisateur oublie l'enregistrement en cours. 
-            
-            Nous avons donc décidé de créer une fonction nous permettant de stopper de manière automatique l'enregistrement. Il s'agit de permettre à l'utilisateur de saisir un temps en minutes et de lancer l'enregistrement. Le temps saisi en minute de l'utilisateur sera converti en secondes.
+            Lors des tests, nous avons remarqué qu'arrêter l'enregistrement de manière manuelle n'est parfois pas très optimale. Dans notre cas, une expérience est d'une durée minimum de 20 minutes, l'utilisateur doit donc rester attentif afin d'arrêter l'enregistrement. Il se peut que l'utilisateur oublie l'enregistrement en cours. Nous avons donc décidé de créer une fonction nous permettant de stopper de manière automatique l'enregistrement. Il s'agit de permettre à l'utilisateur de saisir un temps en minutes et de lancer l'enregistrement. Le temps saisi en minute de l'utilisateur sera converti en secondes.
 
             \vspace{0.2cm}
 
-            De ce fait, l'API PiCamera nous permet de définir le temps d'enregistrement en secondes avec la fonction : \textbf{camera.wait\_recording(tempsEnSeconde)}. Cependant cette fonction possède un défaut, elle agit comme une fonction \textbf{wait()} classique. Par conséquent, durant l'enregistrement, l'utilisateur ne peut pas interagir avec l'application. 
-            
-            \vspace{0.4cm}
-
-            Une fois que nous n'utilisons plus la caméra, nous pouvons couper toute utilisation de la caméra avec la fonction de l'API PiCamera : \textbf{camera.close()}.
+            De ce fait, l'API PiCamera nous permet de définir le temps d'enregistrement en secondes avec la fonction : \textbf{camera.wait\_recording(tempsEnSeconde)}. Cependant cette fonction possède un défaut, elle agit comme une fonction \textbf{wait()} classique. Par conséquent, durant l'enregistrement, l'utilisateur ne peut pas interagir avec l'application. Une fois que nous n'utilisons plus la caméra, nous pouvons couper toute utilisation de la caméra avec la fonction de l'API PiCamera : \textbf{camera.close()}.
             
         \subsection{Prendre une capture}
         La fonction prendre une capture est une fonction qui va nous permettre de prendre une photo.
