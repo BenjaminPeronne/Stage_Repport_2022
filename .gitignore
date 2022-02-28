@@ -172,3 +172,4 @@ src/tex/bibliography.aux
 .rapport_stage.toc.icloud
 .rapport_stage.synctex(4).gz.icloud
 rapport_stage.synctex(busy)
+.rapport_stage(without_chapter_format).pdf.icloud
